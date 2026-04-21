@@ -12,9 +12,11 @@
     <ul class="nav-links">
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#experiencia">Experiencia</a></li>
+      <li><a href="#stack">Stack</a></li>
       <li><a href="#enfoque">Enfoque</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contacto">Contacto</a></li>
-      <li><a class="btn-nav" href="#contacto">Agendar diagnóstico técnico</a></li>
+      <li><a class="btn-nav" href="https://wa.me/56972992976" target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a></li>
     </ul>
   </nav>
 
@@ -30,11 +32,16 @@
 
     <div class="hero-content">
       <div class="hero-tag">KUNDEV.CL — ARICA, CHILE</div>
-      <h1>Si tu software falla, tu operación se detiene.<br><em>Lo construimos para producción.</em></h1>
-      <p class="hero-sub">Desarrollamos sistemas a medida, APIs e integraciones críticas para empresas que no pueden permitirse caídas, retrabajo ni deuda técnica costosa.</p>
+      <h1 [innerHTML]="heroCopy.title"></h1>
+      <p class="hero-sub">{{ heroCopy.subtitle }}</p>
       <div class="hero-actions">
-        <a class="btn-primary" href="#contacto">Agendar diagnóstico técnico</a>
-        <a class="btn-secondary" href="#servicios">Evaluar mi proyecto</a>
+        <a class="btn-primary" href="https://wa.me/56972992976" target="_blank" rel="noopener noreferrer">{{ heroCopy.primaryCta }}</a>
+        <a class="btn-secondary" href="#contacto">{{ heroCopy.secondaryCta }}</a>
+      </div>
+      <div class="hero-proof">
+        <span class="proof-chip">Primera conversación técnica sin costo</span>
+        <span class="proof-chip">Respuesta por WhatsApp o correo</span>
+        <span class="proof-chip">Plan de acción claro desde el inicio</span>
       </div>
       <div class="hero-stats">
         <div>
@@ -60,9 +67,9 @@
       <div class="services-header">
         <div>
           <div class="section-tag">SERVICIOS</div>
-          <h2 class="section-title">Ingeniería de software<br>para <em>negocios exigentes</em>.</h2>
+          <h2 class="section-title">Soluciones de software para<br><em>operaciones reales</em>.</h2>
         </div>
-        <p class="section-sub">Diseñamos y construimos soluciones donde la estabilidad impacta directamente en ventas, logística, atención y cumplimiento operativo.</p>
+        <p class="section-sub">Construimos soluciones donde la estabilidad impacta directamente en ventas, logística, atención y continuidad de negocio.</p>
       </div>
       <div class="services-grid">
         <article class="service-card">
@@ -110,14 +117,21 @@
           </div>
         </article>
       </div>
+      <div class="inline-cta">
+        <p>No sabes por dónde partir? Cuéntame tu caso y te propongo el siguiente paso técnico.</p>
+        <div class="cta-actions">
+          <a class="btn-large" href="https://wa.me/56972992976" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a>
+          <a class="btn-ghost" href="#contacto">Ver opciones de contacto</a>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="cases" id="experiencia">
     <div class="container">
       <div class="section-tag">EXPERIENCIA EN CURSO</div>
-      <h2 class="section-title">Proyectos activos con foco en<br><em>resultado de negocio</em>.</h2>
-      <p class="section-sub">Casos representativos en etapa de implementación. Compartimos alcance técnico y estado real para mantener transparencia.</p>
+      <h2 class="section-title">Casos en ejecución con foco en<br><em>impacto operativo</em>.</h2>
+      <p class="section-sub">Proyectos representativos en implementación, con alcance técnico claro y avances reales.</p>
       <div class="cases-grid">
         <article class="case-card">
           <div class="case-head">
@@ -143,6 +157,12 @@
           <p><strong>Problema:</strong> cierre contable lento por conciliación manual de pagos.</p>
           <p><strong>Solución:</strong> API de conciliación automática con reglas parametrizables y evidencia auditable.</p>
         </article>
+      </div>
+      <div class="inline-cta compact">
+        <p>¿Quieres un caso similar en tu operación? Revisamos alcance y riesgos en una llamada técnica.</p>
+        <div class="cta-actions">
+          <a class="btn-large" href="#contacto">Coordinar llamada</a>
+        </div>
       </div>
     </div>
   </section>
@@ -181,7 +201,7 @@
       <div class="trust-grid">
         <article class="trust-card">
           <h3>Código limpio</h3>
-          <p>Convenciones claras, revisión por pares y estructura coherente para reducir fricción de mantenimiento.</p>
+          <p>Convenciones claras, revisión por pares y estructura coherente para reducir costo de mantenimiento.</p>
         </article>
         <article class="trust-card">
           <h3>Arquitectura definida</h3>
@@ -189,7 +209,7 @@
         </article>
         <article class="trust-card">
           <h3>Escalabilidad real</h3>
-          <p>Diseño preparado para crecer en usuarios, integraciones y volumen sin colapsar operación.</p>
+          <p>Diseño preparado para crecer en carga, integraciones y volumen sin colapsar operación.</p>
         </article>
         <article class="trust-card">
           <h3>Documentación útil</h3>
@@ -243,23 +263,115 @@
             <div class="code-dot green"></div>
             <span class="code-filename">kundev.architecture.ts</span>
           </div>
-          <div class="code-body">
-            <div class="c-comment">// Estándar de entrega — KUNDEV</div>
-            <div class="line-gap"><span class="c-key">interface</span> <span class="c-fn">Delivery</span> &#123;</div>
-            <div class="indent"><span class="c-key">architecture</span>: <span class="c-string">'scalable'</span>;</div>
-            <div class="indent"><span class="c-key">documentation</span>: <span class="c-num">true</span>;</div>
-            <div class="indent"><span class="c-key">tests</span>: <span class="c-string">'critical-path'</span>;</div>
-            <div class="indent"><span class="c-key">technicalDebt</span>: <span class="c-string">'controlled'</span>;</div>
-            <div>&#125;</div>
-            <div class="line-gap c-comment">// Sin improvisación, con criterios de producción</div>
-            <div class="line-gap"><span class="c-key">const</span> <span class="c-fn">build</span> = <span class="c-key">async</span> () =&gt; &#123;</div>
-            <div class="indent"><span class="c-key">return</span> &#123;</div>
-            <div class="indent2"><span class="c-key">stability</span>: <span class="c-string">'production-ready'</span>,</div>
-            <div class="indent2"><span class="c-key">origin</span>: <span class="c-string">'Arica, Chile 🌵'</span></div>
-            <div class="indent">&#125;;</div>
-            <div>&#125;;</div>
+          <div class="code-body" [class.typing]="typingActive()" [class.typing-reset]="!typingActive()">
+            <div class="code-line c-comment" style="--line-index: 0">// Estándar de entrega — KUNDEV</div>
+            <div class="code-line line-gap" style="--line-index: 1"><span class="c-key">interface</span> <span class="c-fn">Delivery</span> &#123;</div>
+            <div class="code-line indent" style="--line-index: 2"><span class="c-key">architecture</span>: <span class="c-string">'scalable'</span>;</div>
+            <div class="code-line indent" style="--line-index: 3"><span class="c-key">documentation</span>: <span class="c-num">true</span>;</div>
+            <div class="code-line indent" style="--line-index: 4"><span class="c-key">tests</span>: <span class="c-string">'critical-path'</span>;</div>
+            <div class="code-line indent" style="--line-index: 5"><span class="c-key">technicalDebt</span>: <span class="c-string">'controlled'</span>;</div>
+            <div class="code-line" style="--line-index: 6">&#125;</div>
+            <div class="code-line line-gap c-comment" style="--line-index: 7">// Sin improvisación, con criterios de producción</div>
+            <div class="code-line line-gap" style="--line-index: 8"><span class="c-key">const</span> <span class="c-fn">build</span> = <span class="c-key">async</span> () =&gt; &#123;</div>
+            <div class="code-line indent" style="--line-index: 9"><span class="c-key">return</span> &#123;</div>
+            <div class="code-line indent2" style="--line-index: 10"><span class="c-key">stability</span>: <span class="c-string" [class.c-string-typo]="stabilityTypoActive()">'{{ stabilityText() }}'</span>,</div>
+            <div class="code-line indent2" style="--line-index: 11"><span class="c-key">origin</span>: <span class="c-string">'Arica, Chile 🌵'</span></div>
+            <div class="code-line indent" style="--line-index: 12">&#125;;</div>
+            <div class="code-line" style="--line-index: 13">&#125;;</div>
+            <div class="typing-cursor" aria-hidden="true"></div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof" id="confianza-comercial">
+    <div class="container">
+      <div class="section-tag">CONFIANZA OPERATIVA</div>
+      <h2 class="section-title">Lo que puedes esperar al trabajar con KUNDEV.</h2>
+      <p class="section-sub">Compromisos claros para reducir riesgos de ejecución y asegurar continuidad en producción.</p>
+      <div class="proof-grid">
+        <article class="proof-card">
+          <h3>Alcance aterrizado</h3>
+          <p>Antes de desarrollar, definimos alcance técnico y criterio de éxito para evitar retrabajo y sorpresas en costo/plazo.</p>
+        </article>
+        <article class="proof-card">
+          <h3>Ritmo de entrega visible</h3>
+          <p>Trabajo por hitos funcionales, con avance verificable para que siempre tengas control de lo que se está construyendo.</p>
+        </article>
+        <article class="proof-card">
+          <h3>Soporte post-entrega</h3>
+          <p>No desaparecemos al publicar: entregamos documentación y continuidad técnica para operación real del negocio.</p>
+        </article>
+        <article class="proof-card">
+          <h3>Acuerdos claros</h3>
+          <p>Definimos alcance, prioridades y forma de trabajo desde el inicio para que cada avance tenga trazabilidad.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="stack" id="stack">
+    <div class="container">
+      <div class="section-tag">TECNOLOGÍAS</div>
+      <h2 class="section-title">Stack que usamos para construir<br><em>software estable y escalable</em>.</h2>
+      <div class="stack-groups">
+        <div class="stack-group">
+          <h3>Frontend</h3>
+          <div class="stack-tags">
+            <span class="tag">Angular</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">SCSS</span>
+          </div>
+        </div>
+        <div class="stack-group">
+          <h3>Backend y APIs</h3>
+          <div class="stack-tags">
+            <span class="tag">Node.js</span>
+            <span class="tag">PHP</span>
+            <span class="tag">REST</span>
+            <span class="tag">Laravel</span>
+          </div>
+        </div>
+        <div class="stack-group">
+          <h3>Datos e infraestructura</h3>
+          <div class="stack-tags">
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Redis</span>
+            <span class="tag">Docker</span>
+            <span class="tag">CI/CD</span>
+            <span class="tag">AWS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-tag">PREGUNTAS FRECUENTES</div>
+      <h2 class="section-title">Preguntas clave antes de iniciar<br><em>un proyecto crítico</em>.</h2>
+      <div class="faq-grid">
+        <article class="faq-card">
+          <h3>¿Trabajan proyectos nuevos y sistemas existentes?</h3>
+          <p>Sí. Podemos construir desde cero o tomar un sistema en operación para estabilizar, mejorar e integrar nuevos módulos.</p>
+        </article>
+        <article class="faq-card">
+          <h3>¿Cómo estiman tiempos y costos?</h3>
+          <p>Partimos con diagnóstico técnico, definimos alcance por hitos y luego entregamos propuesta con fases y prioridades claras.</p>
+        </article>
+        <article class="faq-card">
+          <h3>¿Ofrecen soporte después de entregar?</h3>
+          <p>Sí. Incluimos handover técnico y alternativas de continuidad para asegurar operación estable y evolución del sistema.</p>
+        </article>
+        <article class="faq-card">
+          <h3>¿Cómo partimos?</h3>
+          <p>Agenda una conversación técnica por correo, teléfono o WhatsApp. Revisamos tu caso y proponemos el mejor primer paso.</p>
+        </article>
+        <article class="faq-card">
+          <h3>¿Quién queda con el código y accesos?</h3>
+          <p>Tu empresa mantiene control de repositorios y accesos acordados para asegurar continuidad y autonomía técnica.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -269,17 +381,21 @@
   <section class="cta-section" id="contacto">
     <div class="container centered">
       <div class="section-tag center">HABLEMOS</div>
-      <h2 class="cta-title">¿Necesitas software que soporte tu operación sin interrupciones?</h2>
-      <p class="cta-sub">Agenda una conversación técnica y revisamos alcance, riesgos y la mejor arquitectura para tu caso.</p>
+      <h2 class="cta-title">¿Tienes un problema técnico que ya está frenando tu operación?</h2>
+      <p class="cta-sub">Conversemos 30 minutos y define tu siguiente paso con claridad: alcance inicial, riesgos y prioridades técnicas.</p>
       <div class="cta-actions">
-        <a class="btn-large" href="mailto:contacto@kundev.cl?subject=Diagnóstico%20técnico%20KUNDEV">Agendar diagnóstico técnico</a>
-        <a class="btn-ghost" href="mailto:contacto@kundev.cl">Evaluar mi proyecto</a>
+        <a class="btn-large" href="mailto:juan.meneses75m@gmail.com?subject=Diagnóstico%20técnico%20KUNDEV">Agendar diagnóstico</a>
+        <a class="btn-ghost" href="https://wa.me/56972992976" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a>
+      </div>
+      <div class="contact-direct">
+        <a href="tel:+56972992976">+56 9 7299 2976</a>
+        <a href="mailto:juan.meneses75m@gmail.com">juan.meneses75m@gmail.com</a>
       </div>
     </div>
   </section>
 
   <footer>
-    <div class="footer-copy">© 2026 KUNDEV SpA — Todos los derechos reservados.</div>
+    <div class="footer-copy">© 2026 KUNDEV SpA — Todos los derechos reservados. · Privacidad y términos disponibles bajo solicitud.</div>
     <div class="footer-location">ARICA, REGIÓN XV — CHILE</div>
   </footer>
 </div>
