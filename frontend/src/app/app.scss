@@ -1,7 +1,7 @@
 :host {
 	--black: #0a0a0b;
 	--dark: #111114;
-	--card: #16161a;
+	--card: #111827;
 	--border: #242428;
 	--border-light: #2e2e34;
 	--radius-sm: 6px;
@@ -11,9 +11,9 @@
 	--text-dim: #4a4a52;
 	--sand: #c8b89a;
 	--sand-dim: #8a7a65;
-	--teal: #1e7a6e;
-	--teal-bright: #25a393;
-	--teal-glow: rgba(30, 122, 110, 0.15);
+	--teal: #20917f;
+	--teal-bright: #20917f;
+	--teal-glow: rgba(32, 145, 127, 0.15);
 	--font: 'Sora', sans-serif;
 	--mono: 'JetBrains Mono', monospace;
 	display: block;
@@ -201,7 +201,7 @@ section[id] {
 	content: '';
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(90deg, rgba(10, 10, 11, 0.9) 0%, rgba(10, 10, 11, 0.78) 35%, rgba(10, 10, 11, 0.34) 62%, rgba(10, 10, 11, 0.18) 100%);
+	background: linear-gradient(90deg, rgba(10, 10, 11, 0.86) 0%, rgba(10, 10, 11, 0.68) 35%, rgba(10, 10, 11, 0.28) 62%, rgba(10, 10, 11, 0.14) 100%);
 	z-index: 6;
 }
 
@@ -624,7 +624,7 @@ p {
 	display: inline-flex;
 	align-items: center;
 	text-decoration: none;
-	color: var(--text-muted);
+	color: var(--sand);
 	border: 1px solid var(--border-light);
 	border-radius: var(--radius-sm);
 	padding: 13px 24px;
@@ -1341,7 +1341,7 @@ footer {
 	}
 
 	.hero-bg::after {
-		background: linear-gradient(180deg, rgba(10, 10, 11, 0.84) 0%, rgba(10, 10, 11, 0.56) 42%, rgba(10, 10, 11, 0.78) 100%);
+		background: linear-gradient(180deg, rgba(10, 10, 11, 0.78) 0%, rgba(10, 10, 11, 0.52) 44%, rgba(10, 10, 11, 0.72) 100%);
 	}
 
 	.condor-network {
