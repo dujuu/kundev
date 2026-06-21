@@ -1,427 +1,79 @@
-<div class="landing">
-  <nav>
-    <a href="#inicio" class="logo">
-      <svg class="logo-mark" viewBox="0 0 32 32" fill="none">
-        <path d="M8 6 L8 26" stroke="#25A393" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M8 16 L20 6" stroke="#25A393" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M8 16 L22 26" stroke="#C8B89A" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M14 11 Q22 8 26 12 Q22 14 14 16Z" fill="rgba(37,163,147,0.2)" stroke="rgba(37,163,147,0.4)" stroke-width="0.5"/>
-      </svg>
-      <span class="logo-text">KUN<span>DEV</span></span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#experiencia">Experiencia</a></li>
-      <li><a href="#stack">Stack</a></li>
-      <li><a href="#enfoque">Enfoque</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-      <li><a class="btn-nav" href="https://wa.me/56972992976" target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a></li>
-    </ul>
-  </nav>
-
-  <section class="hero fx-medio" id="inicio">
-    <div class="hero-bg">
-      <div class="hero-bg-gradient"></div>
-      <div class="grid-lines"></div>
-      <div class="andean-pattern"></div>
-      <svg class="condor-network" viewBox="0 0 640 260" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-        <path class="condor-wing" d="M35 144 L118 115 L208 100 L286 104 L356 96 L420 76 L485 48 L545 26 L612 34" />
-        <path class="condor-wing" d="M36 145 L120 156 L204 174 L284 184 L358 186 L418 196 L478 216 L544 238 L612 246" />
-        <path class="condor-core" d="M292 138 C302 116 326 106 352 112 C380 118 398 136 398 154 C398 174 380 190 354 194 C324 198 300 184 292 164 C289 157 289 147 292 138 Z" />
-        <path class="condor-trail" d="M146 143 C198 132 244 130 286 133" />
-        <g class="condor-nodes">
-          <circle cx="35" cy="144" r="3" /><circle cx="118" cy="115" r="3" /><circle cx="208" cy="100" r="2.6" />
-          <circle cx="286" cy="104" r="2.4" /><circle cx="356" cy="96" r="2.8" /><circle cx="420" cy="76" r="2.5" />
-          <circle cx="485" cy="48" r="2.4" /><circle cx="545" cy="26" r="2.8" /><circle cx="612" cy="34" r="2.6" />
-          <circle cx="120" cy="156" r="2.6" /><circle cx="204" cy="174" r="2.5" /><circle cx="284" cy="184" r="2.4" />
-          <circle cx="358" cy="186" r="2.4" /><circle cx="418" cy="196" r="2.4" /><circle cx="478" cy="216" r="2.8" />
-          <circle cx="544" cy="238" r="2.8" /><circle cx="612" cy="246" r="2.6" />
-        </g>
-      </svg>
-      <svg class="andes-wireframe" viewBox="0 0 900 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <polygon points="0,520 132,382 228,442 306,330 410,398 505,252 605,364 705,290 804,348 900,312 900,520" class="mount-back"/>
-        <polygon points="0,520 110,422 200,472 280,354 378,424 468,278 566,392 666,312 760,372 900,330 900,520" class="mount-mid"/>
-        <polyline points="32,488 140,378 232,430 314,322 408,390 505,248 605,360 706,286 806,344" class="mount-line"/>
-        <polyline points="52,506 118,420 206,468 286,350 382,420 468,274 570,388 670,308 758,368" class="mount-line dim"/>
-      </svg>
-      <div class="code-river" aria-hidden="true">
-        <div class="code-stream stream-a"><span>const flujo = await andes.route(data);</span><span>if (risk &gt; 0) resilience.patch();</span><span>return kuntev.core(originArica);</span></div>
-        <div class="code-stream stream-b"><span>pipeline.map(signal =&gt; signal.normalize());</span><span>system.sync(chakana.grid, condor.node);</span><span>deploy(region.cl.norte).with(observability);</span></div>
-        <div class="code-stream stream-c"><span>for (const event of stream) await monitor.track(event);</span><span>integrations.push('erp', 'payments', 'logistics');</span><span>architecture.stability = 'production-ready';</span></div>
-      </div>
-      <div class="data-particles" aria-hidden="true">
-        <span class="particle p1"></span><span class="particle p2"></span><span class="particle p3"></span><span class="particle p4"></span>
-        <span class="particle p5"></span><span class="particle p6"></span><span class="particle p7"></span><span class="particle p8"></span>
-      </div>
+<header class="site-header">
+  <div class="container flex-headers">
+    <div class="logo-area">
+      <img id="invisible-logo" class="logo-image" src="/NUEVOLOOG.jpg" alt="KunDev logo">
+      <span class="logo">KunDev</span>
     </div>
+    <nav class="main-nav">
+      <a href="#soluciones">Soluciones</a>
+      <a href="#vision">Visión</a>
+      <a href="#contacto" class="btn-primary">Iniciar proyecto</a>
+    </nav>
+  </div>
+</header>
 
-    <div class="hero-content">
-      <div class="hero-tag">KUNDEV.CL — ARICA, CHILE</div>
-      <h1 [innerHTML]="heroCopy.title"></h1>
-      <p class="hero-sub">{{ heroCopy.subtitle }}</p>
-      <div class="hero-actions">
-        <a class="btn-primary" href="https://wa.me/56972992976" target="_blank" rel="noopener noreferrer">{{ heroCopy.primaryCta }}</a>
-        <a class="btn-secondary" href="#contacto">{{ heroCopy.secondaryCta }}</a>
-      </div>
-      <div class="hero-proof">
-        <span class="proof-chip">Primera conversación técnica sin costo</span>
-        <span class="proof-chip">Respuesta por WhatsApp o correo</span>
-        <span class="proof-chip">Plan de acción claro desde el inicio</span>
-      </div>
-      <div class="hero-stats">
-        <div>
-          <div class="stat-num">100<span>%</span></div>
-          <div class="stat-label">CÓDIGO A MEDIDA</div>
-        </div>
-        <div>
-          <div class="stat-num">24/7</div>
-          <div class="stat-label">FOCO EN CONTINUIDAD OPERATIVA</div>
-        </div>
-        <div>
-          <div class="stat-num">∞</div>
-          <div class="stat-label">ARQUITECTURA PREPARADA PARA ESCALAR</div>
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="tagline">Tecnología con visión.</span>
+        <h1 class="hero-title">{{ heroCopy.title }}</h1>
+        <p class="hero-subtitle">{{ heroCopy.subtitle }}</p>
+        <div class="hero-actions">
+          <a href="#contacto" class="btn-primary btn-large">{{ heroCopy.primaryCta }}</a>
+          <a href="#soluciones" class="btn-secondary btn-large">Explorar soluciones</a>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="desert-divider"></div>
-
-  <section class="services" id="servicios">
+  <section id="soluciones" class="services-section">
     <div class="container">
-      <div class="services-header">
-        <div>
-          <div class="section-tag">SERVICIOS</div>
-          <h2 class="section-title">Soluciones de software para<br><em>operaciones reales</em>.</h2>
-        </div>
-        <p class="section-sub">Construimos soluciones donde la estabilidad impacta directamente en ventas, logística, atención y continuidad de negocio.</p>
+      <div class="section-header">
+        <span class="section-label">Lo que hacemos</span>
+        <h2 class="section-title">Soluciones digitales precisas.</h2>
       </div>
       <div class="services-grid">
-        <article class="service-card">
-          <div class="service-icon">⚙</div>
-          <h3 class="service-title">Sistemas a medida</h3>
-          <p class="service-desc">Aplicaciones web alineadas a procesos reales del negocio, con reglas claras, trazabilidad y control sobre cada flujo crítico.</p>
-          <div class="service-tags">
-            <span class="tag">Laravel</span>
-            <span class="tag">Angular</span>
-            <span class="tag">REST API</span>
-            <span class="tag">PostgreSQL</span>
-          </div>
-        </article>
-        <article class="service-card">
-          <div class="service-icon">◉</div>
-          <h3 class="service-title">Backend y APIs</h3>
-          <p class="service-desc">Servicios robustos, contratos bien definidos y arquitectura orientada a rendimiento para soportar carga de producción.</p>
-          <div class="service-tags">
-            <span class="tag">Node.js</span>
-            <span class="tag">PHP</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Redis</span>
-          </div>
-        </article>
-        <article class="service-card">
-          <div class="service-icon">⇆</div>
-          <h3 class="service-title">Integraciones críticas</h3>
-          <p class="service-desc">Conectamos ERPs, pasarelas de pago y servicios externos para eliminar tareas manuales y reducir errores operativos.</p>
-          <div class="service-tags">
-            <span class="tag">Webhooks</span>
-            <span class="tag">OAuth</span>
-            <span class="tag">SII Chile</span>
-            <span class="tag">Transbank</span>
-          </div>
-        </article>
-        <article class="service-card">
-          <div class="service-icon">▲</div>
-          <h3 class="service-title">Arquitectura escalable</h3>
-          <p class="service-desc">Definimos bases técnicas para crecer sin reescribir: observabilidad, despliegue confiable y evolución sostenida.</p>
-          <div class="service-tags">
-            <span class="tag">Cloud</span>
-            <span class="tag">CI/CD</span>
-            <span class="tag">Testing</span>
-            <span class="tag">AWS</span>
-          </div>
-        </article>
-      </div>
-      <div class="inline-cta">
-        <p>No sabes por dónde partir? Cuéntame tu caso y te propongo el siguiente paso técnico.</p>
-        <div class="cta-actions">
-          <a class="btn-large" href="https://wa.me/56972992976" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a>
-          <a class="btn-ghost" href="#contacto">Ver opciones de contacto</a>
+        <div class="service-card">
+          <h3>Plataformas Web</h3>
+          <p>Experiencias digitales rápidas y optimizadas, diseñadas para transmitir el nivel real de tu organización.</p>
+        </div>
+        <div class="service-card">
+          <h3>Sistemas de Gestión</h3>
+          <p>Herramientas a medida para automatizar operaciones, tener control total y reducir la carga administrativa.</p>
+        </div>
+        <div class="service-card">
+          <h3>Aplicaciones Móviles</h3>
+          <p>Desarrollo nativo e híbrido para conectar directamente con tus clientes con una experiencia fluida.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="cases" id="experiencia">
+  <section id="vision" class="mission">
     <div class="container">
-      <div class="section-tag">EXPERIENCIA EN CURSO</div>
-      <h2 class="section-title">Casos en ejecución con foco en<br><em>impacto operativo</em>.</h2>
-      <p class="section-sub">Proyectos representativos en implementación, con alcance técnico claro y avances reales.</p>
-      <div class="cases-grid">
-        <article class="case-card">
-          <div class="case-head">
-            <h3>Plataforma de órdenes B2B</h3>
-            <span class="status">EN DESARROLLO</span>
-          </div>
-          <p><strong>Problema:</strong> pedidos por correo y errores frecuentes en precios y stock.</p>
-          <p><strong>Solución:</strong> portal de autogestión con reglas comerciales, API de inventario y validaciones automáticas.</p>
-        </article>
-        <article class="case-card">
-          <div class="case-head">
-            <h3>Motor de integración logística</h3>
-            <span class="status">EN DESARROLLO</span>
-          </div>
-          <p><strong>Problema:</strong> seguimiento fragmentado entre transportistas y ERP.</p>
-          <p><strong>Solución:</strong> capa de integración con webhooks, trazabilidad por evento y tablero de monitoreo operacional.</p>
-        </article>
-        <article class="case-card">
-          <div class="case-head">
-            <h3>API financiera para conciliación</h3>
-            <span class="status">EN DISEÑO TÉCNICO</span>
-          </div>
-          <p><strong>Problema:</strong> cierre contable lento por conciliación manual de pagos.</p>
-          <p><strong>Solución:</strong> API de conciliación automática con reglas parametrizables y evidencia auditable.</p>
-        </article>
-      </div>
-      <div class="inline-cta compact">
-        <p>¿Quieres un caso similar en tu operación? Revisamos alcance y riesgos en una llamada técnica.</p>
-        <div class="cta-actions">
-          <a class="btn-large" href="#contacto">Coordinar llamada</a>
-        </div>
+      <div class="mission-content">
+        <span class="section-label">Nuestro Origen</span>
+        <h2 class="section-title">De Arica al mundo.</h2>
+        <p>Inspirados en la visión y perspectiva del <strong>Kuntur andino</strong>. No solo construimos software, creamos oportunidades reales para empresas y nuevos talentos en la región.</p>
       </div>
     </div>
   </section>
 
-  <section id="diferenciadores">
+  <section id="contacto" class="cta-section">
     <div class="container">
-      <div class="section-tag">POR QUÉ KUNDEV</div>
-      <h2 class="section-title">No somos la opción más barata.<br><em>Somos la opción estable.</em></h2>
-      <p class="section-sub">Nuestro objetivo no es entregar rápido y desaparecer. Es construir una base que soporte tu operación y crecimiento.</p>
-      <div class="diff-grid">
-        <article class="diff-card">
-          <div class="diff-num">01</div>
-          <h3 class="diff-title">Arquitectura primero</h3>
-          <p class="diff-desc">Antes de codificar, definimos estructura, límites y riesgos para evitar deuda técnica evitable.</p>
-        </article>
-        <article class="diff-card">
-          <div class="diff-num">02</div>
-          <h3 class="diff-title">Código mantenible</h3>
-          <p class="diff-desc">Aplicamos estándares, revisión técnica y documentación para que tu equipo pueda evolucionar el sistema con seguridad.</p>
-        </article>
-        <article class="diff-card">
-          <div class="diff-num">03</div>
-          <h3 class="diff-title">Comunicación técnica directa</h3>
-          <p class="diff-desc">Trabajas con quienes diseñan y desarrollan. Menos ruido, mejor velocidad de decisión y mejor ejecución.</p>
-        </article>
-      </div>
+      <h2 class="section-title">Eleva el estándar.</h2>
+      <p>Comercios, pymes y organizaciones confían en KunDev para su transformación tecnológica. Conversemos.</p>
+      <a href="mailto:hola@kundev.cl" class="btn-primary btn-large">{{ heroCopy.primaryCta }}</a>
     </div>
   </section>
+</main>
 
-  <div class="desert-divider"></div>
-
-  <section class="trust" id="confianza">
-    <div class="container">
-      <div class="section-tag">BASE TÉCNICA</div>
-      <h2 class="section-title">Cómo protegemos tu inversión en software.</h2>
-      <div class="trust-grid">
-        <article class="trust-card">
-          <h3>Código limpio</h3>
-          <p>Convenciones claras, revisión por pares y estructura coherente para reducir costo de mantenimiento.</p>
-        </article>
-        <article class="trust-card">
-          <h3>Arquitectura definida</h3>
-          <p>Decisiones técnicas documentadas desde el inicio para evitar improvisación y retrabajo.</p>
-        </article>
-        <article class="trust-card">
-          <h3>Escalabilidad real</h3>
-          <p>Diseño preparado para crecer en carga, integraciones y volumen sin colapsar operación.</p>
-        </article>
-        <article class="trust-card">
-          <h3>Documentación útil</h3>
-          <p>Documentamos APIs, flujos y despliegue para asegurar continuidad operacional del negocio.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="approach" id="enfoque">
-    <div class="container">
-      <div class="approach-inner">
-        <div>
-          <div class="section-tag">CÓMO TRABAJAMOS</div>
-          <h2 class="section-title">Un proceso claro, con control técnico de principio a fin.</h2>
-          <div class="approach-steps">
-            <div class="step">
-              <span class="step-num">01</span>
-              <div>
-                <h3 class="step-title">Diagnóstico técnico</h3>
-                <p class="step-desc">Analizamos procesos, cuellos de botella y riesgo operativo antes de proponer una solución.</p>
-              </div>
-            </div>
-            <div class="step">
-              <span class="step-num">02</span>
-              <div>
-                <h3 class="step-title">Arquitectura y alcance</h3>
-                <p class="step-desc">Definimos stack, límites, entregables y criterios de calidad con trazabilidad desde el día uno.</p>
-              </div>
-            </div>
-            <div class="step">
-              <span class="step-num">03</span>
-              <div>
-                <h3 class="step-title">Construcción iterativa</h3>
-                <p class="step-desc">Entregamos por hitos funcionales para validar valor temprano y ajustar sin perder control.</p>
-              </div>
-            </div>
-            <div class="step">
-              <span class="step-num">04</span>
-              <div>
-                <h3 class="step-title">Entrega y continuidad</h3>
-                <p class="step-desc">Despliegue, documentación y soporte técnico para asegurar operación estable en producción.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="code-visual">
-          <div class="code-header">
-            <div class="code-dot red"></div>
-            <div class="code-dot yellow"></div>
-            <div class="code-dot green"></div>
-            <span class="code-filename">kundev.architecture.ts</span>
-          </div>
-          <div class="code-body" [class.typing]="typingActive()" [class.typing-reset]="!typingActive()">
-            <div class="code-line c-comment" style="--line-index: 0">// Estándar de entrega — KUNDEV</div>
-            <div class="code-line line-gap" style="--line-index: 1"><span class="c-key">interface</span> <span class="c-fn">Delivery</span> &#123;</div>
-            <div class="code-line indent" style="--line-index: 2"><span class="c-key">architecture</span>: <span class="c-string">'scalable'</span>;</div>
-            <div class="code-line indent" style="--line-index: 3"><span class="c-key">documentation</span>: <span class="c-num">true</span>;</div>
-            <div class="code-line indent" style="--line-index: 4"><span class="c-key">tests</span>: <span class="c-string">'critical-path'</span>;</div>
-            <div class="code-line indent" style="--line-index: 5"><span class="c-key">technicalDebt</span>: <span class="c-string">'controlled'</span>;</div>
-            <div class="code-line" style="--line-index: 6">&#125;</div>
-            <div class="code-line line-gap c-comment" style="--line-index: 7">// Sin improvisación, con criterios de producción</div>
-            <div class="code-line line-gap" style="--line-index: 8"><span class="c-key">const</span> <span class="c-fn">build</span> = <span class="c-key">async</span> () =&gt; &#123;</div>
-            <div class="code-line indent" style="--line-index: 9"><span class="c-key">return</span> &#123;</div>
-            <div class="code-line indent2" style="--line-index: 10"><span class="c-key">stability</span>: <span class="c-string" [class.c-string-typo]="stabilityTypoActive()">'{{ stabilityText() }}'</span>,</div>
-            <div class="code-line indent2" style="--line-index: 11"><span class="c-key">origin</span>: <span class="c-string">'Arica, Chile 🌵'</span></div>
-            <div class="code-line indent" style="--line-index: 12">&#125;;</div>
-            <div class="code-line" style="--line-index: 13">&#125;;</div>
-            <div class="typing-cursor" aria-hidden="true"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="proof" id="confianza-comercial">
-    <div class="container">
-      <div class="section-tag">CONFIANZA OPERATIVA</div>
-      <h2 class="section-title">Lo que puedes esperar al trabajar con KUNDEV.</h2>
-      <p class="section-sub">Compromisos claros para reducir riesgos de ejecución y asegurar continuidad en producción.</p>
-      <div class="proof-grid">
-        <article class="proof-card">
-          <h3>Alcance aterrizado</h3>
-          <p>Antes de desarrollar, definimos alcance técnico y criterio de éxito para evitar retrabajo y sorpresas en costo/plazo.</p>
-        </article>
-        <article class="proof-card">
-          <h3>Ritmo de entrega visible</h3>
-          <p>Trabajo por hitos funcionales, con avance verificable para que siempre tengas control de lo que se está construyendo.</p>
-        </article>
-        <article class="proof-card">
-          <h3>Soporte post-entrega</h3>
-          <p>No desaparecemos al publicar: entregamos documentación y continuidad técnica para operación real del negocio.</p>
-        </article>
-        <article class="proof-card">
-          <h3>Acuerdos claros</h3>
-          <p>Definimos alcance, prioridades y forma de trabajo desde el inicio para que cada avance tenga trazabilidad.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="stack" id="stack">
-    <div class="container">
-      <div class="section-tag">TECNOLOGÍAS</div>
-      <h2 class="section-title">Stack que usamos para construir<br><em>software estable y escalable</em>.</h2>
-      <div class="stack-groups">
-        <div class="stack-group">
-          <h3>Frontend</h3>
-          <div class="stack-tags">
-            <span class="tag">Angular</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">SCSS</span>
-          </div>
-        </div>
-        <div class="stack-group">
-          <h3>Backend y APIs</h3>
-          <div class="stack-tags">
-            <span class="tag">Node.js</span>
-            <span class="tag">PHP</span>
-            <span class="tag">REST</span>
-            <span class="tag">Laravel</span>
-          </div>
-        </div>
-        <div class="stack-group">
-          <h3>Datos e infraestructura</h3>
-          <div class="stack-tags">
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Redis</span>
-            <span class="tag">Docker</span>
-            <span class="tag">CI/CD</span>
-            <span class="tag">AWS</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="faq" id="faq">
-    <div class="container">
-      <div class="section-tag">PREGUNTAS FRECUENTES</div>
-      <h2 class="section-title">Preguntas clave antes de iniciar<br><em>un proyecto crítico</em>.</h2>
-      <div class="faq-grid">
-        <article class="faq-card">
-          <h3>¿Trabajan proyectos nuevos y sistemas existentes?</h3>
-          <p>Sí. Podemos construir desde cero o tomar un sistema en operación para estabilizar, mejorar e integrar nuevos módulos.</p>
-        </article>
-        <article class="faq-card">
-          <h3>¿Cómo estiman tiempos y costos?</h3>
-          <p>Partimos con diagnóstico técnico, definimos alcance por hitos y luego entregamos propuesta con fases y prioridades claras.</p>
-        </article>
-        <article class="faq-card">
-          <h3>¿Ofrecen soporte después de entregar?</h3>
-          <p>Sí. Incluimos handover técnico y alternativas de continuidad para asegurar operación estable y evolución del sistema.</p>
-        </article>
-        <article class="faq-card">
-          <h3>¿Cómo partimos?</h3>
-          <p>Agenda una conversación técnica por correo, teléfono o WhatsApp. Revisamos tu caso y proponemos el mejor primer paso.</p>
-        </article>
-        <article class="faq-card">
-          <h3>¿Quién queda con el código y accesos?</h3>
-          <p>Tu empresa mantiene control de repositorios y accesos acordados para asegurar continuidad y autonomía técnica.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <div class="desert-divider"></div>
-
-  <section class="cta-section" id="contacto">
-    <div class="container centered">
-      <div class="section-tag center">HABLEMOS</div>
-      <h2 class="cta-title">¿Tienes un problema técnico que ya está frenando tu operación?</h2>
-      <p class="cta-sub">Conversemos 30 minutos y define tu siguiente paso con claridad: alcance inicial, riesgos y prioridades técnicas.</p>
-      <div class="cta-actions">
-        <a class="btn-large" href="mailto:juan.meneses75m@gmail.com?subject=Diagnóstico%20técnico%20KUNDEV">Agendar diagnóstico</a>
-        <a class="btn-ghost" href="https://wa.me/56972992976" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a>
-      </div>
-      <div class="contact-direct">
-        <a href="tel:+56972992976">+56 9 7299 2976</a>
-        <a href="mailto:juan.meneses75m@gmail.com">juan.meneses75m@gmail.com</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-copy">© 2026 KUNDEV SpA — Todos los derechos reservados. · Privacidad y términos disponibles bajo solicitud.</div>
-    <div class="footer-location">ARICA, REGIÓN XV — CHILE</div>
-  </footer>
-</div>
+<footer class="site-footer container">
+  <div class="footer-left">
+    <p>&copy; {{ currentYear }} KunDev.</p>
+  </div>
+  <div class="footer-right">
+    <p>Arica, Chile.</p>
+  </div>
+</footer>
