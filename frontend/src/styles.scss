@@ -7,7 +7,9 @@
   --color-sand: #FAFAF8;
   --color-border: #EAEAEA;
   --color-accent: #B25A38; /* Subtle copper/desert accent */
+  --color-accent-dark: #963F23;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-display: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   
   --spacing-base: 1rem;
   --spacing-md: 2rem;
@@ -30,6 +32,12 @@ html, body {
   overflow-x: hidden;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--color-bg);
@@ -50,6 +58,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
   font-weight: 600;
   line-height: 1.1;
   letter-spacing: -0.03em;
@@ -71,4 +80,13 @@ button {
   font-family: inherit;
   cursor: pointer;
   border: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

@@ -29,20 +29,20 @@
 
   <section id="soluciones" class="services-section">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header" appReveal>
         <span class="section-label">Lo que hacemos</span>
         <h2 class="section-title">Soluciones digitales precisas.</h2>
       </div>
       <div class="services-grid">
-        <div class="service-card">
+        <div class="service-card" appReveal appSpotlight>
           <h3>Plataformas Web</h3>
           <p>Experiencias digitales rápidas y optimizadas, diseñadas para transmitir el nivel real de tu organización.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" appReveal appSpotlight>
           <h3>Sistemas de Gestión</h3>
           <p>Herramientas a medida para automatizar operaciones, tener control total y reducir la carga administrativa.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" appReveal appSpotlight>
           <h3>Aplicaciones Móviles</h3>
           <p>Desarrollo nativo e híbrido para conectar directamente con tus clientes con una experiencia fluida.</p>
         </div>
@@ -51,17 +51,24 @@
   </section>
 
   <section id="vision" class="mission">
+    <svg class="mission-bg" viewBox="0 0 1000 400" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,60 C150,95 300,25 450,65 C600,105 750,45 1000,75" />
+      <path d="M0,125 C150,160 300,95 450,135 C600,175 750,110 1000,145" />
+      <path d="M0,190 C150,220 300,165 450,200 C600,235 750,175 1000,210" />
+      <path d="M0,255 C150,280 300,230 450,260 C600,290 750,235 1000,270" />
+      <path d="M0,320 C150,340 300,295 450,325 C600,350 750,300 1000,335" />
+    </svg>
     <div class="container">
-      <div class="mission-content">
+      <div class="mission-content" appReveal>
         <span class="section-label">Nuestro Origen</span>
         <h2 class="section-title">De Arica al mundo.</h2>
-        <p>Inspirados en la visión y perspectiva del <strong>Kuntur andino</strong>. No solo construimos software, creamos oportunidades reales para empresas y nuevos talentos en la región.</p>
+        <p>Inspirados en la visión y perspectiva del <strong>Kuntur andino</strong>, que sobrevuela el Valle de Azapa y el Morro de Arica. No solo construimos software, creamos oportunidades reales para empresas y nuevos talentos del extremo norte de Chile, entre el desierto de Atacama y el Pacífico.</p>
       </div>
     </div>
   </section>
 
   <section id="contacto" class="cta-section">
-    <div class="container">
+    <div class="container" appReveal>
       <h2 class="section-title">Eleva el estándar.</h2>
       <p>Comercios, pymes y organizaciones confían en KunDev para su transformación tecnológica. Conversemos.</p>
       <a href="mailto:hola@kundev.cl" class="btn-primary btn-large">{{ heroCopy.primaryCta }}</a>
@@ -72,8 +79,10 @@
 <footer class="site-footer container">
   <div class="footer-left">
     <p>&copy; {{ currentYear }} KunDev.</p>
+    <p class="footer-tagline">Desde Arica al mundo.</p>
   </div>
   <div class="footer-right">
-    <p>Arica, Chile.</p>
+    <p>Arica, Chile — 18.4783° S, 70.3126° W</p>
+    <p class="footer-time">{{ localTime() }} hora local</p>
   </div>
 </footer>
