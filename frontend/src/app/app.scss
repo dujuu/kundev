@@ -112,26 +112,100 @@ section {
 }
 
 /* Hero */
-.hero {
-  position: relative;
-  padding: calc(var(--spacing-xl) + 2rem) 0 var(--spacing-xl);
-  text-align: center;
+.hero-wrapper {
+  height: 280vh;
 }
 
-.hero::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 72%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-border) 20%, var(--color-border) 80%, transparent);
-  z-index: 0;
+.hero {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: calc(var(--spacing-xl) + 2rem) 0 var(--spacing-xl);
+  text-align: center;
+  overflow: hidden;
 }
 
 .hero-content {
   position: relative;
+  z-index: 2;
+  will-change: transform, opacity;
+}
+
+.hero-sky-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0;
+  will-change: opacity;
+}
+
+.hero-condor {
+  position: absolute;
+  left: 65%;
+  top: 22%;
+  width: 164px;
+  height: 96px;
+  transform: translate(-50%, -50%) scale(0.3);
+  opacity: 0;
+  will-change: transform, top, opacity;
   z-index: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 8px rgba(44, 26, 10, 0.18));
+}
+
+.hero-tagline2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% + 40px));
+  z-index: 3;
+  text-align: center;
+  opacity: 0;
+  will-change: opacity, transform;
+  pointer-events: none;
+  width: 100%;
+  padding: 0 2rem;
+
+  .tagline2-big {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    font-weight: 600;
+    color: var(--color-primary);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  .tagline2-small {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin-top: 0.75rem;
+    letter-spacing: 0.01em;
+  }
+}
+
+.hero-scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-text-lighter);
+  font-size: 10px;
+  letter-spacing: .06em;
+  animation: hero-bob 1.8s ease-in-out infinite;
+  will-change: opacity;
+  pointer-events: none;
+}
+
+@keyframes hero-bob {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(5px); }
 }
 
 .tagline {

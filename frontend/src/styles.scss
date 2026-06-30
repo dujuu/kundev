@@ -29,7 +29,7 @@
 
 html, body {
   width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip; /* clip no crea scroll container, no rompe position:sticky */
 }
 
 @media (prefers-reduced-motion: no-preference) {
