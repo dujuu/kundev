@@ -1,0 +1,102 @@
+<header class="cot-header container">
+  <a routerLink="/" class="cot-brand">
+    <img class="cot-logo" src="/logo.png" alt="KunDev logo" />
+    <span>KunDev</span>
+  </a>
+  <a routerLink="/" class="cot-back">← Volver</a>
+</header>
+
+<main class="cot-main container">
+  <div class="cot-card">
+    <div class="cot-scene" aria-hidden="true">
+      <span class="star s1"></span>
+      <span class="star s2"></span>
+      <span class="star s3"></span>
+      <span class="star s4"></span>
+      <span class="star s5"></span>
+      <svg class="cot-condor" viewBox="-70 -20 200 80" aria-hidden="true">
+        <path d="M28,16 C18,12 -2,6 -42,0 C-54,-2 -60,3 -50,7 C-30,11 -6,15 10,18" fill="#2C1A0A" />
+        <path
+          d="M-50,7 L-46,16 M-40,2 L-36,13 M-28,1 L-25,12 M-15,3 L-13,14"
+          stroke="#3D2412"
+          stroke-width="1.5"
+          fill="none"
+        />
+        <path d="M32,16 C44,10 68,0 106,-9 C118,-12 124,-6 114,-2 C94,4 68,10 48,16" fill="#2C1A0A" />
+        <path
+          d="M114,-2 L108,8 M102,-5 L98,6 M88,-7 L86,5 M74,-7 L73,6 M60,-4 L60,9"
+          stroke="#3D2412"
+          stroke-width="1.5"
+          fill="none"
+        />
+        <ellipse cx="20" cy="17" rx="15" ry="7" fill="#2C1A0A" />
+        <ellipse cx="35" cy="13" rx="6" ry="4.5" fill="#2C1A0A" />
+        <path d="M18,13 a5,3 0 0,1 8,0" fill="none" stroke="#8B6040" stroke-width="2" opacity=".5" />
+        <path d="M14,23 L11,38 L18,36 L20,25Z" fill="#2C1A0A" />
+      </svg>
+    </div>
+
+    @if (status() === 'success') {
+      <div class="cot-done">
+        <h1>¡Gracias!</h1>
+        <p>Recibí tu idea y te contactaré pronto a tu correo con los siguientes pasos.</p>
+        <a routerLink="/" class="cot-btn cot-btn--ghost">Volver al inicio</a>
+      </div>
+    } @else {
+      <div class="cot-intro">
+        <span class="cot-tag">Cotización</span>
+        <h1>Cuéntame tu idea</h1>
+        <p>
+          Déjame tu correo y qué necesitas resolver. Te respondo directamente con una propuesta — sin
+          formularios eternos ni intermediarios.
+        </p>
+      </div>
+
+      <form class="cot-form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+        <label class="cot-field">
+          <span>Nombre <small>(opcional)</small></span>
+          <input type="text" formControlName="nombre" autocomplete="name" placeholder="Tu nombre o empresa" />
+        </label>
+
+        <label class="cot-field">
+          <span>Correo</span>
+          <input type="email" formControlName="email" autocomplete="email" placeholder="tucorreo@ejemplo.com" />
+          @if (form.controls.email.touched && form.controls.email.invalid) {
+            <small class="cot-error">Ingresa un correo válido.</small>
+          }
+        </label>
+
+        <label class="cot-field">
+          <span>¿Qué necesitas resolver?</span>
+          <textarea
+            formControlName="idea"
+            rows="5"
+            placeholder="Describe tu idea, problema o proyecto que quieres cotizar..."
+          ></textarea>
+          @if (form.controls.idea.touched && form.controls.idea.invalid) {
+            <small class="cot-error">Cuéntame un poco más (mínimo 10 caracteres).</small>
+          }
+        </label>
+
+        <input
+          class="cot-hp"
+          type="text"
+          formControlName="botcheck"
+          tabindex="-1"
+          autocomplete="off"
+          aria-hidden="true"
+        />
+
+        @if (status() === 'error') {
+          <p class="cot-error cot-error--block">
+            No se pudo enviar. Intenta de nuevo o escríbeme a hola&#64;kundev.cl.
+          </p>
+        }
+
+        <button type="submit" class="cot-btn" [disabled]="status() === 'sending'">
+          {{ status() === 'sending' ? 'Enviando...' : 'Enviar solicitud' }}
+        </button>
+      </form>
+    }
+  </div>
+</main>

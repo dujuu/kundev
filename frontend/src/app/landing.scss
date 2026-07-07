@@ -113,16 +113,17 @@ section {
 
 /* Hero */
 .hero-wrapper {
-  height: 280vh;
+  height: auto;
 }
 
 .hero {
-  position: sticky;
-  top: 0;
-  height: 100vh;
+  position: relative;
+  min-height: 100vh;
   padding: calc(var(--spacing-xl) + 2rem) 0 var(--spacing-xl);
   text-align: center;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
 .hero-content {
@@ -137,8 +138,7 @@ section {
   width: 100%;
   height: 100%;
   z-index: 0;
-  opacity: 0;
-  will-change: opacity;
+  opacity: 1;
 }
 
 .hero-condor {
@@ -147,9 +147,8 @@ section {
   top: 22%;
   width: 164px;
   height: 96px;
-  transform: translate(-50%, -50%) scale(0.3);
-  opacity: 0;
-  will-change: transform, top, opacity;
+  transform: translate(-50%, -50%) scale(0.85);
+  opacity: 1;
   z-index: 1;
   pointer-events: none;
   filter: drop-shadow(0 2px 8px rgba(44, 26, 10, 0.18));

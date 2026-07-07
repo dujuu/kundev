@@ -1,0 +1,259 @@
+:host {
+  display: block;
+}
+
+.cot-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.cot-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+  letter-spacing: -0.02em;
+  color: var(--color-primary);
+}
+
+.cot-logo {
+  width: 40px;
+  height: auto;
+}
+
+.cot-back {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.cot-main {
+  display: flex;
+  justify-content: center;
+  padding-top: 2.5rem;
+  padding-bottom: 6rem;
+}
+
+.cot-card {
+  width: 100%;
+  max-width: 560px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+  overflow: hidden;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 8px 28px rgba(0, 0, 0, 0.05);
+}
+
+/* Escena cóndor + estrellas (animación sutil) */
+.cot-scene {
+  position: relative;
+  height: 150px;
+  background: linear-gradient(180deg, #fef6ec 0%, #faf1e4 60%, #f6ebda 100%);
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.cot-condor {
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  width: 118px;
+  height: auto;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 3px 6px rgba(44, 26, 10, 0.15));
+  animation: cot-float 4.5s ease-in-out infinite;
+}
+
+.star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #c99a63;
+  opacity: 0.3;
+  animation: cot-twinkle 3.2s ease-in-out infinite;
+}
+
+.star.s1 {
+  top: 24%;
+  left: 18%;
+  animation-delay: 0s;
+}
+.star.s2 {
+  top: 40%;
+  left: 80%;
+  animation-delay: 0.6s;
+}
+.star.s3 {
+  top: 20%;
+  left: 64%;
+  width: 3px;
+  height: 3px;
+  animation-delay: 1.2s;
+}
+.star.s4 {
+  top: 62%;
+  left: 30%;
+  width: 3px;
+  height: 3px;
+  animation-delay: 1.8s;
+}
+.star.s5 {
+  top: 30%;
+  left: 42%;
+  animation-delay: 2.4s;
+}
+
+@keyframes cot-float {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(-50%, calc(-50% - 8px));
+  }
+}
+
+@keyframes cot-twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Contenido */
+.cot-intro,
+.cot-done {
+  padding: 2rem 2rem 0;
+  text-align: center;
+}
+
+.cot-tag {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+}
+
+.cot-intro h1,
+.cot-done h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.cot-intro p,
+.cot-done p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  max-width: 42ch;
+  margin: 0 auto;
+}
+
+.cot-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.75rem 2rem 2rem;
+}
+
+.cot-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.cot-field > span {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.cot-field > span small {
+  color: var(--color-text-lighter);
+  font-weight: 400;
+}
+
+.cot-field input,
+.cot-field textarea {
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  background: var(--color-sand);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.7rem 0.85rem;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+  resize: vertical;
+}
+
+.cot-field input:focus,
+.cot-field textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(178, 90, 56, 0.12);
+}
+
+.cot-error {
+  color: var(--color-accent-dark);
+  font-size: 0.8125rem;
+}
+
+.cot-error--block {
+  margin-top: -0.25rem;
+}
+
+/* honeypot oculto */
+.cot-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.cot-btn {
+  align-self: stretch;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #fff;
+  background: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: 0.8rem 1.5rem;
+  transition: opacity 0.2s ease;
+}
+
+.cot-btn:hover {
+  opacity: 0.85;
+}
+
+.cot-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.cot-btn--ghost {
+  display: inline-block;
+  color: var(--color-primary);
+  background: transparent;
+  border: none;
+  margin-top: 1.25rem;
+}
+
+.cot-done {
+  padding-bottom: 2.5rem;
+}
