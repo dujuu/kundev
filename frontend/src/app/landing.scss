@@ -145,8 +145,8 @@ section {
   position: absolute;
   left: 65%;
   top: 22%;
-  width: 164px;
-  height: 96px;
+  width: 190px;
+  height: 79px;
   transform: translate(-50%, -50%) scale(0.85);
   opacity: 1;
   z-index: 1;
@@ -351,10 +351,34 @@ section {
   transition-delay: 0.2s;
 }
 
+/* Shared desert-dune backdrop, echoes the hero terrain to bookend the page */
+.section-dunes {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90px;
+  pointer-events: none;
+  z-index: 0;
+
+  path {
+    fill: var(--color-accent);
+    opacity: 0.06;
+  }
+}
+
 /* Statement */
 .statement-section {
+  position: relative;
   padding: var(--spacing-lg) 0;
   text-align: center;
+  overflow: hidden;
+}
+
+.statement-section .container {
+  position: relative;
+  z-index: 1;
 }
 
 .statement-text {
@@ -405,8 +429,8 @@ section {
 .mission-bg path {
   fill: none;
   stroke: var(--color-accent);
-  stroke-width: 1;
-  opacity: 0.08;
+  stroke-width: 1.25;
+  opacity: 0.14;
 }
 
 .mission-content {
@@ -432,6 +456,12 @@ section {
   text-align: center;
   padding: var(--spacing-xl) 0;
   border-top: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.cta-section .container {
+  position: relative;
+  z-index: 1;
 }
 
 .cta-section .section-title {
