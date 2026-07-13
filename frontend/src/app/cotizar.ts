@@ -3,10 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
-// ⚠️ Reemplaza este valor por tu Access Key de https://web3forms.com
-// (entra, escribe tu correo juan.meneses75m@gmail.com y te la envían al instante).
+// Access Key de Web3Forms (https://web3forms.com), asociada a contacto.kundev@gmail.com.
 // Es seguro exponerla en el frontend: solo reenvía el formulario a ese correo.
-const WEB3FORMS_ACCESS_KEY = 'TU_ACCESS_KEY_AQUI';
+const WEB3FORMS_ACCESS_KEY = 'c5c9938e-09bd-44cc-845c-c9a04541b055';
 
 type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
 
