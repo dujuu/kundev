@@ -153,36 +153,6 @@ section {
   pointer-events: none;
 }
 
-.hero-tagline2 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, calc(-50% + 40px));
-  z-index: 3;
-  text-align: center;
-  opacity: 0;
-  will-change: opacity, transform;
-  pointer-events: none;
-  width: 100%;
-  padding: 0 2rem;
-
-  .tagline2-big {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 4.5vw, 3.5rem);
-    font-weight: 600;
-    color: var(--color-primary);
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-  }
-
-  .tagline2-small {
-    font-size: 1rem;
-    color: var(--color-text-muted);
-    margin-top: 0.75rem;
-    letter-spacing: 0.01em;
-  }
-}
-
 .hero-scroll-hint {
   position: absolute;
   bottom: 2.5rem;
@@ -314,9 +284,38 @@ section {
   opacity: 1;
 }
 
+.service-card-top,
 .service-card h3,
 .service-card p {
   position: relative;
+}
+
+.service-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.service-num {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.service-icon {
+  width: 26px;
+  height: 26px;
+  color: var(--color-text-lighter);
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.service-card:hover .service-icon {
+  color: var(--color-accent);
+  transform: translateY(-2px);
 }
 
 .service-card h3 {
@@ -363,7 +362,7 @@ section {
 
   path {
     fill: var(--color-accent);
-    opacity: 0.06;
+    opacity: 0.09;
   }
 }
 
@@ -378,6 +377,15 @@ section {
 .statement-section .container {
   position: relative;
   z-index: 1;
+}
+
+.statement-mark {
+  display: block;
+  width: 64px;
+  height: auto;
+  margin: 0 auto 1.5rem;
+  color: var(--color-accent);
+  opacity: 0.55;
 }
 
 .statement-text {
@@ -432,19 +440,28 @@ section {
   opacity: 0.14;
 }
 
-.mission-content {
+.mission-grid {
   position: relative;
   z-index: 1;
-  max-width: 600px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 4rem;
+  align-items: start;
 }
 
-.mission p {
+.mission-head {
+  position: relative;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--color-accent);
+}
+
+.mission-body p {
   font-size: 1.5rem;
   line-height: 1.5;
   color: var(--color-text-muted);
-  margin-top: 2rem;
+  margin: 0;
 }
-.mission p strong {
+.mission-body p strong {
   color: var(--color-primary);
   font-weight: 500;
 }
@@ -500,6 +517,8 @@ section {
 @media (max-width: 768px) {
   .hero-title { font-size: 2.5rem; }
   .services-grid { grid-template-columns: 1fr; }
-  .mission p { font-size: 1.25rem; }
+  .mission-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .mission-head h2 br { display: none; }
+  .mission-body p { font-size: 1.25rem; }
   .main-nav { display: none; } /* Simplified for this setup */
 }
