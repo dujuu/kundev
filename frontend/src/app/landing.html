@@ -9,7 +9,25 @@
       <a href="#vision">Visión</a>
       <a href="#contacto" class="btn-primary">Iniciar proyecto</a>
     </nav>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      [class.is-open]="menuOpen()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Abrir menú"
+      aria-controls="mobile-menu"
+      (click)="toggleMenu()"
+    >
+      <span></span><span></span><span></span>
+    </button>
   </div>
+
+  <nav id="mobile-menu" class="mobile-nav" [class.is-open]="menuOpen()">
+    <a href="#soluciones" (click)="closeMenu()">Soluciones</a>
+    <a href="#vision" (click)="closeMenu()">Visión</a>
+    <a href="#contacto" class="btn-primary" (click)="closeMenu()">Iniciar proyecto</a>
+  </nav>
 </header>
 
 <main>

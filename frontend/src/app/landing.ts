@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { RevealOnScrollDirective } from './reveal-on-scroll.directive';
 import { SpotlightDirective } from './spotlight.directive';
@@ -17,6 +17,15 @@ interface HeroCopy {
 })
 export class Landing {
   currentYear = new Date().getFullYear();
+  menuOpen = signal(false);
+
+  toggleMenu(): void {
+    this.menuOpen.update((open) => !open);
+  }
+
+  closeMenu(): void {
+    this.menuOpen.set(false);
+  }
 
   heroCopy: HeroCopy = {
       title: 'Soluciones digitales de alto nivel',
