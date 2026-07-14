@@ -286,56 +286,43 @@ section {
   gap: 1rem;
 }
 
-/* Trust strip */
-.trust-strip {
-  padding: 2.25rem 0;
-  border-bottom: 1px solid var(--color-border);
-  background-color: var(--color-bg);
-}
-
-.trust-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-
-.trust-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.85rem;
-
-  svg {
-    flex-shrink: 0;
-    width: 24px;
-    height: 24px;
-    color: var(--color-accent);
-    margin-top: 2px;
-  }
-
-  strong {
-    display: block;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--color-primary);
-    letter-spacing: -0.01em;
-  }
-
-  span {
-    display: block;
-    font-size: 0.875rem;
-    color: var(--color-text-muted);
-    margin-top: 0.15rem;
-  }
-}
-
 /* FAQ */
 .faq-section {
   border-top: 1px solid var(--color-border);
 }
 
+.faq-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.faq-aside {
+  .section-label { margin-bottom: 1rem; }
+}
+
+.faq-aside-text {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 1.25rem;
+}
+
+.faq-aside-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-weight: 500;
+  color: var(--color-accent);
+}
+
+.faq-aside-link:hover {
+  color: var(--color-accent-dark);
+  opacity: 1;
+}
+
 .faq-list {
-  max-width: 760px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .faq-item {
@@ -398,7 +385,7 @@ section {
 
 /* Base styles for sections */
 .section-header {
-  margin-bottom: 4rem;
+  margin-bottom: 2.75rem;
 }
 
 .section-label {
@@ -892,6 +879,18 @@ section {
   opacity: 1;
 }
 
+.footer-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+}
+
 .footer-contact p {
   color: var(--color-text-lighter);
 }
@@ -914,7 +913,7 @@ section {
   .hero-title { font-size: 2.5rem; }
   .services-grid { grid-template-columns: 1fr; }
   .process-steps { grid-template-columns: 1fr; gap: 2rem; }
-  .trust-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .faq-grid { grid-template-columns: 1fr; gap: 2rem; }
   .mission-grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .mission-head h2 br { display: none; }
   .mission-body p { font-size: 1.25rem; }
