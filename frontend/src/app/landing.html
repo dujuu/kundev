@@ -7,6 +7,7 @@
     <nav class="main-nav">
       <a href="#soluciones">Soluciones</a>
       <a href="#vision">Visión</a>
+      <a routerLink="/nosotros">Nosotros</a>
       <a href="#contacto" class="btn-primary">Iniciar proyecto</a>
     </nav>
 
@@ -26,6 +27,7 @@
   <nav id="mobile-menu" class="mobile-nav" [class.is-open]="menuOpen()">
     <a href="#soluciones" (click)="closeMenu()">Soluciones</a>
     <a href="#vision" (click)="closeMenu()">Visión</a>
+    <a routerLink="/nosotros" (click)="closeMenu()">Nosotros</a>
     <a href="#contacto" class="btn-primary" (click)="closeMenu()">Iniciar proyecto</a>
   </nav>
 </header>
@@ -111,7 +113,7 @@
             </svg>
           </div>
           <h3>Plataformas Web</h3>
-          <p>Experiencias digitales rápidas y optimizadas, diseñadas para transmitir el nivel real de tu organización.</p>
+          <p>Experiencias digitales rápidas y optimizadas, diseñadas para transmitir el nivel real de su organización.</p>
         </div>
         <div class="service-card" appReveal appSpotlight>
           <div class="service-card-top">
@@ -133,7 +135,7 @@
             </svg>
           </div>
           <h3>Aplicaciones Móviles</h3>
-          <p>Desarrollo nativo e híbrido para conectar directamente con tus clientes con una experiencia fluida.</p>
+          <p>Desarrollo nativo e híbrido para conectar directamente con sus clientes con una experiencia fluida.</p>
         </div>
       </div>
     </div>
@@ -163,12 +165,12 @@
         <li class="process-step" appReveal>
           <span class="process-num">01</span>
           <h3>Conversamos</h3>
-          <p>Entendemos tu operación, dónde están los cuellos de botella y a dónde quieres llegar.</p>
+          <p>Entendemos su operación, dónde están los cuellos de botella y a dónde desea llegar.</p>
         </li>
         <li class="process-step" appReveal>
           <span class="process-num">02</span>
           <h3>Diseñamos y construimos</h3>
-          <p>Prototipamos rápido y desarrollamos la solución a medida, iterando contigo en cada paso.</p>
+          <p>Prototipamos rápido y desarrollamos la solución a medida, iterando junto a usted en cada paso.</p>
         </li>
         <li class="process-step" appReveal>
           <span class="process-num">03</span>
@@ -222,30 +224,30 @@
     <div class="container faq-grid">
       <div class="faq-aside" appReveal>
         <span class="section-label">Preguntas frecuentes</span>
-        <h2 class="section-title">Antes de escribirme</h2>
-        <p class="faq-aside-text">¿Tienes una duda que no está aquí? Escríbeme directamente y te respondo en menos de 24 horas.</p>
+        <h2 class="section-title">Antes de escribirnos</h2>
+        <p class="faq-aside-text">¿Tiene una duda que no está aquí? Escríbanos directamente y le respondemos en menos de 24 horas.</p>
         <a routerLink="/cotizar" class="faq-aside-link">Hacer una consulta →</a>
       </div>
       <div class="faq-list" appReveal>
         <details class="faq-item">
           <summary>¿Cuánto cuesta un proyecto?<span class="faq-icon" aria-hidden="true"></span></summary>
-          <p>Depende del alcance, así que cada proyecto se cotiza a medida. La primera conversación es gratis y sin compromiso: entiendo qué necesitas y te entrego una propuesta clara con el precio antes de empezar. Sin sorpresas.</p>
+          <p>Depende del alcance, así que cada proyecto se cotiza a medida. La primera conversación es gratis y sin compromiso: entendemos qué necesita y le entregamos una propuesta clara con el precio antes de empezar. Sin sorpresas.</p>
         </details>
         <details class="faq-item">
           <summary>¿Cuánto se demora?<span class="faq-icon" aria-hidden="true"></span></summary>
-          <p>Definimos plazos concretos antes de partir. Un sitio profesional suele estar listo en pocas semanas; los sistemas a medida toman más según su complejidad. Siempre sabrás en qué etapa vamos.</p>
+          <p>Definimos plazos concretos antes de partir. Un sitio profesional suele estar listo en pocas semanas; los sistemas a medida toman más según su complejidad. Siempre sabrá en qué etapa vamos.</p>
         </details>
         <details class="faq-item">
           <summary>¿Y si no sé exactamente qué necesito?<span class="faq-icon" aria-hidden="true"></span></summary>
-          <p>Perfecto, para eso conversamos. Muchos clientes llegan con una idea o un problema, no con una especificación. Te ayudo a ordenarla y propongo el camino más simple para resolverlo.</p>
+          <p>Perfecto, para eso conversamos. Muchos clientes llegan con una idea o un problema, no con una especificación. La ayudamos a ordenarla y proponemos el camino más simple para resolverlo.</p>
         </details>
         <details class="faq-item">
-          <summary>¿Trabajas con empresas fuera de Arica?<span class="faq-icon" aria-hidden="true"></span></summary>
-          <p>Sí. Trabajo de forma remota con clientes de todo Chile. La base está en Arica, pero la distancia no es un límite para acompañarte.</p>
+          <summary>¿Trabajan con empresas fuera de Arica?<span class="faq-icon" aria-hidden="true"></span></summary>
+          <p>Sí. Trabajamos de forma remota con clientes de todo Chile. La base está en Arica, pero la distancia no es un límite para acompañarle.</p>
         </details>
         <details class="faq-item">
           <summary>¿Qué pasa después de lanzar?<span class="faq-icon" aria-hidden="true"></span></summary>
-          <p>No desaparezco al entregar. Acompaño la puesta en marcha, mido resultados y sigo mejorando el producto en el tiempo según lo que vayas necesitando.</p>
+          <p>No desaparecemos al entregar. Acompañamos la puesta en marcha, medimos resultados y seguimos mejorando el producto en el tiempo según lo que vaya necesitando.</p>
         </details>
       </div>
     </div>
@@ -304,6 +306,7 @@
       <a href="#soluciones">Soluciones</a>
       <a href="#contacto">Cómo trabajamos</a>
       <a href="#vision">Visión</a>
+      <a routerLink="/nosotros">Nosotros</a>
       <a routerLink="/cotizar">Cotización</a>
     </nav>
 

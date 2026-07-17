@@ -1,0 +1,105 @@
+<header class="site-header">
+  <div class="container flex-headers">
+    <div class="logo-area">
+      <a routerLink="/">
+        <img class="logo-image" src="/logo.svg" alt="KunDev logo">
+      </a>
+      <a routerLink="/" class="logo">KunDev</a>
+    </div>
+    <nav class="main-nav">
+      <a routerLink="/">Inicio</a>
+      <a routerLink="/nosotros" class="is-active">Nosotros</a>
+      <a routerLink="/cotizar" class="btn-primary">Iniciar proyecto</a>
+    </nav>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      [class.is-open]="menuOpen()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Abrir menú"
+      aria-controls="mobile-menu"
+      (click)="toggleMenu()"
+    >
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <nav id="mobile-menu" class="mobile-nav" [class.is-open]="menuOpen()">
+    <a routerLink="/" (click)="closeMenu()">Inicio</a>
+    <a routerLink="/nosotros" (click)="closeMenu()">Nosotros</a>
+    <a routerLink="/cotizar" class="btn-primary" (click)="closeMenu()">Iniciar proyecto</a>
+  </nav>
+</header>
+
+<main>
+  <section class="nosotros-intro">
+    <div class="container" appReveal>
+      <span class="section-label">Nosotros</span>
+      <h1 class="section-title">Las personas detrás de KunDev</h1>
+      <p class="nosotros-intro-text">
+        Un equipo pequeño, cercano y comprometido con cada proyecto que construimos desde Arica
+        para pymes y organizaciones de todo Chile.
+      </p>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <div class="container">
+      <div class="section-header team-header" appReveal>
+        <span class="section-label">Nuestro Equipo</span>
+        <h2 class="section-title">Quienes hacen posible cada proyecto</h2>
+        <span class="brand-divider" aria-hidden="true">{{ '{' }} • {{ '}' }}</span>
+      </div>
+
+      <div class="team-grid">
+        @for (member of team; track member.name) {
+          <app-team-member-card appReveal [member]="member" />
+        }
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo-area">
+        <img class="footer-logo" src="/logo.svg" alt="KunDev logo">
+        <span class="footer-wordmark">KunDev</span>
+      </div>
+      <p class="footer-tagline">Tecnología con visión.</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Pie de página">
+      <span class="footer-nav-title">Navegación</span>
+      <a routerLink="/">Inicio</a>
+      <a routerLink="/nosotros">Nosotros</a>
+      <a routerLink="/cotizar">Cotización</a>
+    </nav>
+
+    <div class="footer-contact">
+      <span class="footer-nav-title">Contacto</span>
+      <a href="mailto:contacto.kundev&#64;gmail.com">contacto.kundev&#64;gmail.com</a>
+      <a
+        class="footer-social"
+        href="https://www.instagram.com/kundev.cl"
+        target="_blank"
+        rel="noopener"
+      >
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/>
+          <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/>
+          <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/>
+        </svg>
+        &#64;kundev.cl
+      </a>
+      <p>Arica, Chile</p>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>&copy; {{ currentYear }} KunDev.</p>
+    <p>Desde Arica al mundo.</p>
+  </div>
+</footer>

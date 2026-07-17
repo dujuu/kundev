@@ -39,15 +39,15 @@
     @if (status() === 'success') {
       <div class="cot-done">
         <h1>¡Gracias!</h1>
-        <p>Recibí tu idea y te contactaré pronto a tu correo con los siguientes pasos.</p>
+        <p>Recibimos su idea y nos pondremos en contacto pronto a su correo con los siguientes pasos.</p>
         <a routerLink="/" class="cot-btn cot-btn--ghost">Volver al inicio</a>
       </div>
     } @else {
       <div class="cot-intro">
         <span class="cot-tag">Cotización</span>
-        <h1>Cuéntame tu idea</h1>
+        <h1>Cuéntenos su idea</h1>
         <p>
-          Déjame tu correo y qué necesitas resolver. Te respondo directamente con una propuesta — sin
+          Déjenos su correo y qué necesita resolver. Le respondemos directamente con una propuesta — sin
           formularios eternos ni intermediarios.
         </p>
       </div>
@@ -55,7 +55,7 @@
       <form class="cot-form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
         <label class="cot-field">
           <span>Nombre <small>(opcional)</small></span>
-          <input type="text" formControlName="nombre" autocomplete="name" placeholder="Tu nombre o empresa" />
+          <input type="text" formControlName="nombre" autocomplete="name" placeholder="Su nombre o empresa" />
         </label>
 
         <label class="cot-field">
@@ -67,14 +67,14 @@
         </label>
 
         <label class="cot-field">
-          <span>¿Qué necesitas resolver?</span>
+          <span>¿Qué necesita resolver?</span>
           <textarea
             formControlName="idea"
             rows="5"
-            placeholder="Describe tu idea, problema o proyecto que quieres cotizar..."
+            placeholder="Describa su idea, problema o proyecto que desea cotizar..."
           ></textarea>
           @if (form.controls.idea.touched && form.controls.idea.invalid) {
-            <small class="cot-error">Cuéntame un poco más (mínimo 10 caracteres).</small>
+            <small class="cot-error">Cuéntenos un poco más (mínimo 10 caracteres).</small>
           }
         </label>
 
@@ -89,7 +89,7 @@
 
         @if (status() === 'error') {
           <p class="cot-error cot-error--block">
-            No se pudo enviar. Intenta de nuevo o escríbeme a
+            No se pudo enviar. Intente de nuevo o escríbanos a
             <a href="mailto:contacto.kundev&#64;gmail.com">contacto.kundev&#64;gmail.com</a>.
           </p>
         }
