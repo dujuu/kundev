@@ -1,4 +1,4 @@
-<header class="site-header">
+<header class="site-header" [class.is-scrolled]="scrolled()">
   <div class="container flex-headers">
     <div class="logo-area">
       <img class="logo-image" src="/logo.svg" alt="KunDev logo">
@@ -8,7 +8,7 @@
       <a href="#soluciones">Soluciones</a>
       <a href="#vision">Visión</a>
       <a routerLink="/nosotros">Nosotros</a>
-      <a href="#contacto" class="btn-primary">Iniciar proyecto</a>
+      <a href="#contacto" class="btn-primary" appRipple>Iniciar proyecto</a>
     </nav>
 
     <button
@@ -28,7 +28,7 @@
     <a href="#soluciones" (click)="closeMenu()">Soluciones</a>
     <a href="#vision" (click)="closeMenu()">Visión</a>
     <a routerLink="/nosotros" (click)="closeMenu()">Nosotros</a>
-    <a href="#contacto" class="btn-primary" (click)="closeMenu()">Iniciar proyecto</a>
+    <a href="#contacto" class="btn-primary" (click)="closeMenu()" appRipple>Iniciar proyecto</a>
   </nav>
 </header>
 
@@ -53,7 +53,7 @@
       <polygon points="0,525 1000,498 1000,600 0,600" fill="#B89870" opacity=".4"/>
     </svg>
 
-    <svg class="hero-condor" viewBox="0 0 300 110" aria-hidden="true">
+    <svg class="hero-condor" viewBox="0 0 300 110" aria-hidden="true" [appParallax]="0.3">
       <!-- left arm: solid inner wing, broad and smooth, no notches -->
       <path d="M143,36 C118,26 98,22 84,22 C80,29 86,35 82,42 C88,49 96,44 102,48 C118,50 132,48 143,48 Z" fill="#2C1A0A"/>
       <!-- left fingers: broad fan of separated primaries, mostly horizontal -->
@@ -82,8 +82,8 @@
         <h1 class="hero-title">{{ heroCopy.title }}</h1>
         <p class="hero-subtitle">{{ heroCopy.subtitle }}</p>
         <div class="hero-actions">
-          <a href="#contacto" class="btn-primary btn-large">{{ heroCopy.primaryCta }}</a>
-          <a href="#soluciones" class="btn-secondary btn-large">Explorar soluciones</a>
+          <a href="#contacto" class="btn-primary btn-large" appRipple appMagnetic>{{ heroCopy.primaryCta }}</a>
+          <a href="#soluciones" class="btn-secondary btn-large" appRipple appMagnetic>Explorar soluciones</a>
         </div>
       </div>
     </div>
@@ -104,7 +104,7 @@
         <h2 class="section-title">Soluciones digitales precisas</h2>
       </div>
       <div class="services-grid">
-        <div class="service-card" appReveal appSpotlight>
+        <div class="service-card" appReveal appSpotlight appTilt>
           <div class="service-card-top">
             <span class="service-num">01</span>
             <svg class="service-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -115,7 +115,7 @@
           <h3>Plataformas Web</h3>
           <p>Experiencias digitales rápidas y optimizadas, diseñadas para transmitir el nivel real de su organización.</p>
         </div>
-        <div class="service-card" appReveal appSpotlight>
+        <div class="service-card" appReveal appSpotlight appTilt>
           <div class="service-card-top">
             <span class="service-num">02</span>
             <svg class="service-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -126,7 +126,7 @@
           <h3>Sistemas de Gestión</h3>
           <p>Herramientas a medida para automatizar operaciones, tener control total y reducir la carga administrativa.</p>
         </div>
-        <div class="service-card" appReveal appSpotlight>
+        <div class="service-card" appReveal appSpotlight appTilt>
           <div class="service-card-top">
             <span class="service-num">03</span>
             <svg class="service-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -229,23 +229,23 @@
         <a routerLink="/cotizar" class="faq-aside-link">Hacer una consulta →</a>
       </div>
       <div class="faq-list" appReveal>
-        <details class="faq-item">
+        <details class="faq-item" appSpotlight>
           <summary>¿Cuánto cuesta un proyecto?<span class="faq-icon" aria-hidden="true"></span></summary>
           <p>Depende del alcance, así que cada proyecto se cotiza a medida. La primera conversación es gratis y sin compromiso: entendemos qué necesita y le entregamos una propuesta clara con el precio antes de empezar. Sin sorpresas.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" appSpotlight>
           <summary>¿Cuánto se demora?<span class="faq-icon" aria-hidden="true"></span></summary>
           <p>Definimos plazos concretos antes de partir. Un sitio profesional suele estar listo en pocas semanas; los sistemas a medida toman más según su complejidad. Siempre sabrá en qué etapa vamos.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" appSpotlight>
           <summary>¿Y si no sé exactamente qué necesito?<span class="faq-icon" aria-hidden="true"></span></summary>
           <p>Perfecto, para eso conversamos. Muchos clientes llegan con una idea o un problema, no con una especificación. La ayudamos a ordenarla y proponemos el camino más simple para resolverlo.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" appSpotlight>
           <summary>¿Trabajan con empresas fuera de Arica?<span class="faq-icon" aria-hidden="true"></span></summary>
           <p>Sí. Trabajamos de forma remota con clientes de todo Chile. La base está en Arica, pero la distancia no es un límite para acompañarle.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" appSpotlight>
           <summary>¿Qué pasa después de lanzar?<span class="faq-icon" aria-hidden="true"></span></summary>
           <p>No desaparecemos al entregar. Acompañamos la puesta en marcha, medimos resultados y seguimos mejorando el producto en el tiempo según lo que vaya necesitando.</p>
         </details>
@@ -255,7 +255,7 @@
 
   <section id="contacto" class="cta-section">
     <div class="container" appReveal>
-      <div class="cta-panel">
+      <div class="cta-panel" appSpotlight>
         <svg class="cta-panel-sky" viewBox="0 0 1000 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
           <defs>
             <linearGradient id="kd_cta_sky" x1="0" y1="0" x2="0" y2="1">
@@ -284,7 +284,7 @@
         <div class="cta-panel-content">
           <h2 class="section-title">Eleva el estándar</h2>
           <p>Comercios, pymes y organizaciones confían en KunDev para su transformación tecnológica. Conversemos.</p>
-          <a routerLink="/cotizar" class="btn-primary btn-large">Solicitar cotización</a>
+          <a routerLink="/cotizar" class="btn-primary btn-large" appRipple appMagnetic>Solicitar cotización</a>
         </div>
       </div>
     </div>

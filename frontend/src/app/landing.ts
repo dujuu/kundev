@@ -1,7 +1,11 @@
-import { Component, signal } from '@angular/core';
+import { Component, HostListener, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { RevealOnScrollDirective } from './reveal-on-scroll.directive';
 import { SpotlightDirective } from './spotlight.directive';
+import { RippleDirective } from './ripple.directive';
+import { ParallaxDirective } from './parallax.directive';
+import { MagneticDirective } from './magnetic.directive';
+import { TiltDirective } from './tilt.directive';
 
 interface HeroCopy {
   title: string;
@@ -11,13 +15,27 @@ interface HeroCopy {
 
 @Component({
   selector: 'app-landing',
-  imports: [RouterLink, RevealOnScrollDirective, SpotlightDirective],
+  imports: [
+    RouterLink,
+    RevealOnScrollDirective,
+    SpotlightDirective,
+    RippleDirective,
+    ParallaxDirective,
+    MagneticDirective,
+    TiltDirective,
+  ],
   templateUrl: './landing.html',
   styleUrl: './landing.scss'
 })
 export class Landing {
   currentYear = new Date().getFullYear();
   menuOpen = signal(false);
+  scrolled = signal(false);
+
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+    this.scrolled.set(window.scrollY > 24);
+  }
 
   toggleMenu(): void {
     this.menuOpen.update((open) => !open);
