@@ -6,6 +6,7 @@ import { RippleDirective } from './ripple.directive';
 import { ParallaxDirective } from './parallax.directive';
 import { MagneticDirective } from './magnetic.directive';
 import { TiltDirective } from './tilt.directive';
+import { MouseParallaxDirective } from './mouse-parallax.directive';
 
 interface HeroCopy {
   title: string;
@@ -23,6 +24,7 @@ interface HeroCopy {
     ParallaxDirective,
     MagneticDirective,
     TiltDirective,
+    MouseParallaxDirective,
   ],
   templateUrl: './landing.html',
   styleUrl: './landing.scss'
