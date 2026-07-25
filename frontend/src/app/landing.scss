@@ -1196,6 +1196,12 @@ section {
 }
 
 @media (max-width: 768px) {
+  .hero-condor-layer {
+    left: 82%;
+    top: 9%;
+    width: 120px;
+    height: 44px;
+  }
   .hero-title { font-size: 2.5rem; }
   .services-grid { grid-template-columns: 1fr; }
   .process-steps { grid-template-columns: 1fr; gap: 2rem; }
