@@ -1,0 +1,45 @@
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header" appReveal>
+      <div class="section-kicker">
+        <span class="section-label">Preguntas frecuentes</span>
+        <span class="section-label-line" aria-hidden="true"></span>
+      </div>
+      <h2 class="section-title">Antes de escribirnos</h2>
+    </div>
+
+    <div class="faq-panel" appReveal>
+      <ul class="faq-nav">
+        @for (item of faqs; track item.question; let i = $index) {
+          <li>
+            <button
+              type="button"
+              class="faq-nav-item"
+              [class.is-active]="activeFaq() === i"
+              (click)="setActiveFaq(i)"
+            >
+              <span class="faq-nav-num">{{ item.number }}</span>
+              <span class="faq-nav-question">{{ item.question }}</span>
+            </button>
+          </li>
+        }
+      </ul>
+
+      <div class="faq-detail" appSpotlight>
+        <span class="faq-detail-label">{{ faqs[activeFaq()].category }}</span>
+        <h3 class="faq-detail-question">{{ faqs[activeFaq()].question }}</h3>
+        <p class="faq-detail-answer">{{ faqs[activeFaq()].answer }}</p>
+        <div class="faq-detail-tags">
+          @for (tag of faqs[activeFaq()].tags; track tag) {
+            <span class="faq-tag">{{ tag }}</span>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-footer-note" appReveal>
+      <p>¿Tiene una duda que no está aquí? Escríbanos directamente y le respondemos en menos de 24 horas.</p>
+      <a routerLink="/cotizar" class="faq-aside-link">Hacer una consulta →</a>
+    </div>
+  </div>
+</section>

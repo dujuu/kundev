@@ -419,83 +419,9 @@
     </div>
   </section>
 
-  <section class="faq-section">
-    <div class="container">
-      <div class="section-header" appReveal>
-        <div class="section-kicker">
-          <span class="section-label">Preguntas frecuentes</span>
-          <span class="section-label-line" aria-hidden="true"></span>
-        </div>
-        <h2 class="section-title">Antes de escribirnos</h2>
-      </div>
+  <app-faq-section />
 
-      <div class="faq-panel" appReveal>
-        <ul class="faq-nav">
-          @for (item of faqs; track item.question; let i = $index) {
-            <li>
-              <button
-                type="button"
-                class="faq-nav-item"
-                [class.is-active]="activeFaq() === i"
-                (click)="setActiveFaq(i)"
-              >
-                <span class="faq-nav-num">{{ item.number }}</span>
-                <span class="faq-nav-question">{{ item.question }}</span>
-              </button>
-            </li>
-          }
-        </ul>
-
-        <div class="faq-detail" appSpotlight>
-          <span class="faq-detail-label">{{ faqs[activeFaq()].category }}</span>
-          <h3 class="faq-detail-question">{{ faqs[activeFaq()].question }}</h3>
-          <p class="faq-detail-answer">{{ faqs[activeFaq()].answer }}</p>
-          <div class="faq-detail-tags">
-            @for (tag of faqs[activeFaq()].tags; track tag) {
-              <span class="faq-tag">{{ tag }}</span>
-            }
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-footer-note" appReveal>
-        <p>¿Tiene una duda que no está aquí? Escríbanos directamente y le respondemos en menos de 24 horas.</p>
-        <a routerLink="/cotizar" class="faq-aside-link">Hacer una consulta →</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="contacto" class="cta-section" appScrollProgress>
-    <div class="container cta-stage" appReveal>
-      <span class="cta-kicker">Conversemos</span>
-      <h2 class="display-title cta-title">
-        <span class="cta-word">Eleva</span>
-        <span class="cta-word">el</span>
-        <span class="cta-word">estándar</span>
-      </h2>
-      <p class="cta-lead">
-        Comercios, pymes y organizaciones confían en KunDev para su transformación tecnológica.
-      </p>
-      <a routerLink="/cotizar" class="btn-primary btn-large cta-button" appRipple appMagnetic>
-        Solicitar cotización
-      </a>
-      <span class="cta-coords">Arica · 18.4783° S, 70.3126° W</span>
-    </div>
-
-    <div class="cta-scene" aria-hidden="true">
-      <div class="cta-glow"></div>
-      <div class="cta-sun"></div>
-      <svg class="cta-dune cta-dune-far" viewBox="0 0 1440 200" preserveAspectRatio="none">
-        <path d="M0,118 C180,78 360,138 540,108 C720,78 900,128 1080,98 C1260,68 1380,108 1440,92 L1440,200 L0,200 Z"/>
-      </svg>
-      <svg class="cta-dune cta-dune-mid" viewBox="0 0 1440 200" preserveAspectRatio="none">
-        <path d="M0,150 C200,110 400,166 600,140 C800,114 1000,160 1200,134 C1320,119 1400,146 1440,138 L1440,200 L0,200 Z"/>
-      </svg>
-      <svg class="cta-dune cta-dune-near" viewBox="0 0 1440 200" preserveAspectRatio="none">
-        <path d="M0,176 C240,150 480,186 720,168 C960,150 1200,182 1440,164 L1440,200 L0,200 Z"/>
-      </svg>
-    </div>
-  </section>
+  <app-cta-section />
 </main>
 
 <footer class="site-footer">
