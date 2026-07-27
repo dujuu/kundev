@@ -182,10 +182,32 @@
           <p>Desarrollo nativo e híbrido para conectar directamente con sus clientes con una experiencia fluida.</p>
         </div>
       </div>
+
+      <div class="code-showcase" appReveal>
+        <div class="code-showcase-text">
+          <span class="section-label">Cómo lo hacemos</span>
+          <h3>Código real, no plantillas</h3>
+          <p>Cada proyecto se construye a medida, con arquitectura pensada para su operación — no ensamblamos plantillas genéricas.</p>
+        </div>
+        <div class="code-window">
+          <div class="code-titlebar">
+            <span class="code-dot code-dot-red"></span>
+            <span class="code-dot code-dot-yellow"></span>
+            <span class="code-dot code-dot-green"></span>
+            <span class="code-filename">kundev.ts</span>
+          </div>
+          <pre class="code-body"><span class="code-line code-line-1"><span class="code-kw">const</span> kundev = <span class="code-fn">defineAgency</span>({{ '{' }}</span><span class="code-line code-line-2">&nbsp;&nbsp;region: <span class="code-str">'Arica, Chile'</span>,</span><span class="code-line code-line-3">&nbsp;&nbsp;builds: [<span class="code-str">'web'</span>, <span class="code-str">'sistemas'</span>, <span class="code-str">'apps'</span>],</span><span class="code-line code-line-4">&nbsp;&nbsp;mission: <span class="code-str">'idea → producción'</span>,</span><span class="code-line code-line-5">{{ '}' }});<span class="code-cursor" aria-hidden="true"></span></span></pre>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="statement-section">
+    <div class="statement-glow" aria-hidden="true"></div>
+    <svg class="statement-dunes" viewBox="0 0 1080 300" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 300 L0 190 L180 90 L360 200 L540 60 L720 180 L900 100 L1080 210 L1080 300 Z" fill="rgba(255,255,255,0.05)"/>
+      <path d="M0 300 L0 230 L220 150 L420 240 L620 130 L840 230 L1080 160 L1080 300 Z" fill="rgba(255,255,255,0.08)"/>
+    </svg>
     <svg class="pixel-corner corner-tl" viewBox="0 0 120 100" aria-hidden="true">
       <g stroke="currentColor" stroke-width="1.5" fill="none">
         <rect x="0" y="0" width="20" height="20"/>
@@ -242,25 +264,74 @@
     <div class="container">
       <div class="section-header" appReveal>
         <span class="section-label">Cómo trabajamos</span>
-        <h2 class="section-title">De la idea a producción</h2>
+        <h2 class="section-title">De la idea<br><em>a producción</em></h2>
       </div>
-      <ol class="process-steps">
-        <li class="process-step" appReveal>
-          <span class="process-num">01</span>
-          <h3>Conversamos</h3>
-          <p>Entendemos su operación, dónde están los cuellos de botella y a dónde desea llegar.</p>
-        </li>
-        <li class="process-step" appReveal>
-          <span class="process-num">02</span>
-          <h3>Diseñamos y construimos</h3>
-          <p>Prototipamos rápido y desarrollamos la solución a medida, iterando junto a usted en cada paso.</p>
-        </li>
-        <li class="process-step" appReveal>
-          <span class="process-num">03</span>
-          <h3>Lanzamos y acompañamos</h3>
-          <p>Ponemos en marcha, medimos resultados y seguimos mejorando el producto en el tiempo.</p>
-        </li>
-      </ol>
+      <div class="process-track">
+        <ol class="process-steps">
+          <li class="process-step" appReveal>
+            <div class="process-text">
+              <span class="process-badge">01</span>
+              <h3>Conversamos</h3>
+              <p>Entendemos su operación, dónde están los cuellos de botella y a dónde desea llegar.</p>
+            </div>
+            <div class="process-visual">
+              <div class="service-visual" appSpotlight>
+                <svg viewBox="0 0 240 150" class="service-illustration" aria-hidden="true">
+                  <circle cx="120" cy="75" r="58" class="visual-ring"/>
+                  <rect x="40" y="42" width="90" height="46" rx="8" class="visual-box bubble-a"/>
+                  <path d="M58,88 L58,102 L76,88Z" class="visual-box bubble-a"/>
+                  <rect x="120" y="70" width="72" height="38" rx="8" class="visual-box visual-box-accent bubble-b"/>
+                  <path d="M192,108 L192,120 L177,108Z" class="visual-box visual-box-accent bubble-b"/>
+                  <line x1="54" y1="58" x2="110" y2="58" class="visual-line-thin bubble-a-line bubble-a-line-1"/>
+                  <line x1="54" y1="66" x2="98" y2="66" class="visual-line-thin bubble-a-line bubble-a-line-2"/>
+                  <line x1="54" y1="74" x2="106" y2="74" class="visual-line-thin bubble-a-line bubble-a-line-3"/>
+                  <line x1="132" y1="84" x2="176" y2="84" class="visual-line-thin bubble-b-line bubble-b-line-1"/>
+                  <line x1="132" y1="92" x2="164" y2="92" class="visual-line-thin bubble-b-line bubble-b-line-2"/>
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li class="process-step" appReveal>
+            <div class="process-visual">
+              <div class="service-visual" appSpotlight>
+                <svg viewBox="0 0 240 150" class="service-illustration" aria-hidden="true">
+                  <circle cx="120" cy="75" r="58" class="visual-ring"/>
+                  <circle cx="120" cy="75" r="16" class="visual-pulse-ring puzzle-spark puzzle-spark-1"/>
+                  <circle cx="120" cy="75" r="16" class="visual-pulse-ring puzzle-spark puzzle-spark-2"/>
+                  <path d="M50,40 L118,40 L118,60 C130,62 130,88 118,90 L118,110 L50,110 Z" class="visual-box puzzle-left"/>
+                  <path d="M118,40 L186,40 L186,110 L118,110 L118,90 C130,88 130,62 118,60 Z" class="visual-box visual-box-accent puzzle-right"/>
+                </svg>
+              </div>
+            </div>
+            <div class="process-text">
+              <span class="process-badge">02</span>
+              <h3>Diseñamos y construimos</h3>
+              <p>Prototipamos rápido y desarrollamos la solución a medida, iterando junto a usted en cada paso.</p>
+            </div>
+          </li>
+          <li class="process-step" appReveal>
+            <div class="process-text">
+              <span class="process-badge">03</span>
+              <h3>Lanzamos y acompañamos</h3>
+              <p>Ponemos en marcha, medimos resultados y seguimos mejorando el producto en el tiempo.</p>
+            </div>
+            <div class="process-visual">
+              <div class="service-visual" appSpotlight>
+                <svg viewBox="0 0 240 150" class="service-illustration" aria-hidden="true">
+                  <circle cx="120" cy="75" r="58" class="visual-ring"/>
+                  <path d="M46,112 L88,84 L124,98 L176,46" class="visual-flow-line"/>
+                  <circle cx="46" cy="112" r="3" class="visual-node"/>
+                  <circle cx="88" cy="84" r="3" class="visual-node"/>
+                  <circle cx="124" cy="98" r="3" class="visual-node"/>
+                  <circle cx="176" cy="46" r="4.5" class="visual-node visual-node-accent"/>
+                  <circle cx="176" cy="46" r="14" class="visual-pulse-ring"/>
+                  <circle cx="176" cy="46" r="14" class="visual-pulse-ring visual-pulse-ring-2"/>
+                </svg>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
     </div>
   </section>
 
@@ -275,17 +346,23 @@
     <div class="container">
       <div class="mission-grid" appReveal>
         <div class="mission-head">
-          <span class="section-label">Nuestro Origen</span>
-          <h2 class="section-title">De Arica <br>al mundo</h2>
+          <div class="section-kicker">
+            <span class="section-label">Nuestro Origen</span>
+            <span class="section-label-line" aria-hidden="true"></span>
+          </div>
+          <h2 class="display-title mission-title">De Arica<br><em>al mundo</em></h2>
         </div>
         <div class="mission-body">
-          <p>Inspirados en la visión y perspectiva del <strong>Kuntur andino</strong>, que sobrevuela el Valle de Azapa y el Morro de Arica. No solo construimos software, creamos oportunidades reales para empresas y nuevos talentos del extremo norte de Chile, entre el desierto de Atacama y el Pacífico.</p>
+          <p>Inspirados en la visión y perspectiva del <span class="highlight-accent">Kuntur andino</span>, que sobrevuela el Valle de Azapa y el histórico Morro de Arica.</p>
+          <p>No solo construimos software, creamos <span class="highlight-accent">oportunidades reales</span> para empresas y nuevos talentos del extremo norte de Chile.</p>
+          <p class="mission-body-quote">Nuestra <strong>ingeniería de excelencia</strong> nace entre la mística del desierto de Atacama y la inmensidad del Pacífico.</p>
         </div>
       </div>
     </div>
   </section>
 
   <section class="regional-band">
+    <div class="regional-band-glow" aria-hidden="true"></div>
     <svg class="pixel-corner corner-tl" viewBox="0 0 120 100" aria-hidden="true">
       <g stroke="currentColor" stroke-width="1.5" fill="none">
         <rect x="0" y="0" width="20" height="20"/>
@@ -331,101 +408,92 @@
         <line x1="164.7" y1="73.2" x2="187.7" y2="63.6"/>
       </g>
     </svg>
-    <svg class="regional-watermark" viewBox="0 0 300 110" aria-hidden="true">
-      <path d="M143,36 C118,26 98,22 84,22 C80,29 86,35 82,42 C88,49 96,44 102,48 C118,50 132,48 143,48 Z"/>
-      <path d="M92,25 L20,15 L88,33 Z"/>
-      <path d="M89,30 L26,26 L86,39 Z"/>
-      <path d="M87,35 L38,36 L85,44 Z"/>
-      <path d="M157,36 C182,26 202,22 216,22 C220,29 214,35 218,42 C212,49 204,44 198,48 C182,50 168,48 157,48 Z"/>
-      <path d="M208,25 L280,15 L212,33 Z"/>
-      <path d="M211,30 L274,26 L214,39 Z"/>
-      <path d="M213,35 L262,36 L215,44 Z"/>
-      <path d="M150,26 C157,30 160,42 157,54 C155,66 145,66 143,54 C140,42 143,30 150,26 Z"/>
-    </svg>
     <div class="container" appReveal>
       <span class="regional-band-label">Extremo norte de Chile</span>
       <p class="regional-band-text">Comprometidos con el talento y las empresas de nuestra región.</p>
+      <ul class="regional-badges">
+        <li>Región de Arica y Parinacota</li>
+        <li>Cobertura remota en todo Chile</li>
+        <li>Impulsamos talento local</li>
+      </ul>
     </div>
   </section>
 
   <section class="faq-section">
-    <div class="container faq-grid">
-      <div class="faq-aside" appReveal>
-        <span class="section-label">Preguntas frecuentes</span>
+    <div class="container">
+      <div class="section-header" appReveal>
+        <div class="section-kicker">
+          <span class="section-label">Preguntas frecuentes</span>
+          <span class="section-label-line" aria-hidden="true"></span>
+        </div>
         <h2 class="section-title">Antes de escribirnos</h2>
-        <p class="faq-aside-text">¿Tiene una duda que no está aquí? Escríbanos directamente y le respondemos en menos de 24 horas.</p>
-        <a routerLink="/cotizar" class="faq-aside-link">Hacer una consulta →</a>
       </div>
-      <div class="faq-list" appReveal>
-        <details class="faq-item" appSpotlight>
-          <summary>¿Cuánto cuesta un proyecto?<span class="faq-icon" aria-hidden="true"></span></summary>
-          <p>Depende del alcance, así que cada proyecto se cotiza a medida. La primera conversación es gratis y sin compromiso: entendemos qué necesita y le entregamos una propuesta clara con el precio antes de empezar. Sin sorpresas.</p>
-        </details>
-        <details class="faq-item" appSpotlight>
-          <summary>¿Cuánto se demora?<span class="faq-icon" aria-hidden="true"></span></summary>
-          <p>Definimos plazos concretos antes de partir. Un sitio profesional suele estar listo en pocas semanas; los sistemas a medida toman más según su complejidad. Siempre sabrá en qué etapa vamos.</p>
-        </details>
-        <details class="faq-item" appSpotlight>
-          <summary>¿Y si no sé exactamente qué necesito?<span class="faq-icon" aria-hidden="true"></span></summary>
-          <p>Perfecto, para eso conversamos. Muchos clientes llegan con una idea o un problema, no con una especificación. La ayudamos a ordenarla y proponemos el camino más simple para resolverlo.</p>
-        </details>
-        <details class="faq-item" appSpotlight>
-          <summary>¿Trabajan con empresas fuera de Arica?<span class="faq-icon" aria-hidden="true"></span></summary>
-          <p>Sí. Trabajamos de forma remota con clientes de todo Chile. La base está en Arica, pero la distancia no es un límite para acompañarle.</p>
-        </details>
-        <details class="faq-item" appSpotlight>
-          <summary>¿Qué pasa después de lanzar?<span class="faq-icon" aria-hidden="true"></span></summary>
-          <p>No desaparecemos al entregar. Acompañamos la puesta en marcha, medimos resultados y seguimos mejorando el producto en el tiempo según lo que vaya necesitando.</p>
-        </details>
+
+      <div class="faq-panel" appReveal>
+        <ul class="faq-nav">
+          @for (item of faqs; track item.question; let i = $index) {
+            <li>
+              <button
+                type="button"
+                class="faq-nav-item"
+                [class.is-active]="activeFaq() === i"
+                (click)="setActiveFaq(i)"
+              >
+                <span class="faq-nav-num">{{ item.number }}</span>
+                <span class="faq-nav-question">{{ item.question }}</span>
+              </button>
+            </li>
+          }
+        </ul>
+
+        <div class="faq-detail" appSpotlight>
+          <span class="faq-detail-label">{{ faqs[activeFaq()].category }}</span>
+          <h3 class="faq-detail-question">{{ faqs[activeFaq()].question }}</h3>
+          <p class="faq-detail-answer">{{ faqs[activeFaq()].answer }}</p>
+          <div class="faq-detail-tags">
+            @for (tag of faqs[activeFaq()].tags; track tag) {
+              <span class="faq-tag">{{ tag }}</span>
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-footer-note" appReveal>
+        <p>¿Tiene una duda que no está aquí? Escríbanos directamente y le respondemos en menos de 24 horas.</p>
+        <a routerLink="/cotizar" class="faq-aside-link">Hacer una consulta →</a>
       </div>
     </div>
   </section>
 
-  <section id="contacto" class="cta-section">
-    <div class="container" appReveal>
-      <div class="cta-panel" appSpotlight>
-        <svg class="pixel-corner corner-tr cta-corner" viewBox="0 0 120 100" aria-hidden="true">
-          <g stroke="currentColor" stroke-width="1.5" fill="none">
-            <rect x="0" y="0" width="20" height="20"/>
-            <rect x="20" y="0" width="20" height="20"/>
-            <rect x="40" y="0" width="20" height="20"/>
-            <rect x="60" y="0" width="20" height="20"/>
-            <rect x="0" y="20" width="20" height="20"/>
-            <rect x="20" y="20" width="20" height="20"/>
-            <rect x="0" y="40" width="20" height="20"/>
-          </g>
-        </svg>
-        <svg class="cta-panel-sky" viewBox="0 0 1000 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <defs>
-            <linearGradient id="kd_cta_sky" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%"   stop-color="#FEF6EC"/>
-              <stop offset="45%"  stop-color="#FAE8CC"/>
-              <stop offset="100%" stop-color="#F0D4A8"/>
-            </linearGradient>
-          </defs>
-          <rect width="1000" height="400" fill="url(#kd_cta_sky)"/>
-          <polygon points="0,300 160,250 340,285 520,240 700,280 860,245 1000,265 1000,400 0,400" fill="#D4BCA0" opacity=".4"/>
-          <polygon points="0,345 200,315 420,340 640,310 840,338 1000,318 1000,400 0,400" fill="#C4A888" opacity=".45"/>
-        </svg>
-        <svg class="cta-condor" viewBox="0 0 300 110" aria-hidden="true">
-          <path d="M143,36 C118,26 98,22 84,22 C80,29 86,35 82,42 C88,49 96,44 102,48 C118,50 132,48 143,48 Z" fill="#2C1A0A"/>
-          <path d="M92,25 L20,15 L88,33 Z" fill="#2C1A0A"/>
-          <path d="M89,30 L26,26 L86,39 Z" fill="#2C1A0A"/>
-          <path d="M87,35 L38,36 L85,44 Z" fill="#2C1A0A"/>
-          <path d="M157,36 C182,26 202,22 216,22 C220,29 214,35 218,42 C212,49 204,44 198,48 C182,50 168,48 157,48 Z" fill="#2C1A0A"/>
-          <path d="M208,25 L280,15 L212,33 Z" fill="#2C1A0A"/>
-          <path d="M211,30 L274,26 L214,39 Z" fill="#2C1A0A"/>
-          <path d="M213,35 L262,36 L215,44 Z" fill="#2C1A0A"/>
-          <path d="M150,26 C157,30 160,42 157,54 C155,66 145,66 143,54 C140,42 143,30 150,26 Z" fill="#2C1A0A"/>
-          <path d="M141,19 C141,12 159,12 159,19 C159,24 154,27 150,27 C146,27 141,24 141,19 Z" fill="#B25A38"/>
-          <path d="M146,25 L150,31 L154,25 Z" fill="#2C1A0A"/>
-        </svg>
-        <div class="cta-panel-content">
-          <h2 class="section-title">Eleva el estándar</h2>
-          <p>Comercios, pymes y organizaciones confían en KunDev para su transformación tecnológica. Conversemos.</p>
-          <a routerLink="/cotizar" class="btn-primary btn-large" appRipple appMagnetic>Solicitar cotización</a>
-        </div>
-      </div>
+  <section id="contacto" class="cta-section" appScrollProgress>
+    <div class="container cta-stage" appReveal>
+      <span class="cta-kicker">Conversemos</span>
+      <h2 class="display-title cta-title">
+        <span class="cta-word">Eleva</span>
+        <span class="cta-word">el</span>
+        <span class="cta-word">estándar</span>
+      </h2>
+      <p class="cta-lead">
+        Comercios, pymes y organizaciones confían en KunDev para su transformación tecnológica.
+      </p>
+      <a routerLink="/cotizar" class="btn-primary btn-large cta-button" appRipple appMagnetic>
+        Solicitar cotización
+      </a>
+      <span class="cta-coords">Arica · 18.4783° S, 70.3126° W</span>
+    </div>
+
+    <div class="cta-scene" aria-hidden="true">
+      <div class="cta-glow"></div>
+      <div class="cta-sun"></div>
+      <svg class="cta-dune cta-dune-far" viewBox="0 0 1440 200" preserveAspectRatio="none">
+        <path d="M0,118 C180,78 360,138 540,108 C720,78 900,128 1080,98 C1260,68 1380,108 1440,92 L1440,200 L0,200 Z"/>
+      </svg>
+      <svg class="cta-dune cta-dune-mid" viewBox="0 0 1440 200" preserveAspectRatio="none">
+        <path d="M0,150 C200,110 400,166 600,140 C800,114 1000,160 1200,134 C1320,119 1400,146 1440,138 L1440,200 L0,200 Z"/>
+      </svg>
+      <svg class="cta-dune cta-dune-near" viewBox="0 0 1440 200" preserveAspectRatio="none">
+        <path d="M0,176 C240,150 480,186 720,168 C960,150 1200,182 1440,164 L1440,200 L0,200 Z"/>
+      </svg>
     </div>
   </section>
 </main>

@@ -92,3 +92,482 @@ button {
     scroll-behavior: auto !important;
   }
 }
+
+/* ==========================================================================
+   Shared shell — header, nav, footer, buttons and section primitives.
+   These live here rather than in a component stylesheet so every route
+   renders the same chrome. Editing them in one place changes the whole site.
+   ========================================================================== */
+
+/* --- Sections ------------------------------------------------------------ */
+section {
+  padding: var(--spacing-xl) 0;
+}
+
+.section-header {
+  margin-bottom: 2.75rem;
+}
+
+.section-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+/* Short accent rule that can sit beside a label */
+.section-label-line {
+  flex: 1;
+  max-width: 56px;
+  height: 1px;
+  background: var(--color-accent);
+  opacity: 0.4;
+}
+
+/* Label + rule on one row */
+.section-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.section-kicker .section-label {
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Standard section headline */
+.section-title {
+  font-size: clamp(1.875rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+/* Headline for the page's two emotional peaks (origin story, closing CTA) */
+.display-title {
+  font-size: clamp(2.75rem, 6.5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+/* Italic counterpoint used inside both display and section titles */
+.section-title em,
+.display-title em {
+  display: inline-block;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-accent);
+}
+
+/* --- Kuntur mark ---------------------------------------------------------
+   The condor SVG is reused across pages (hero, cotización). Its wing beat
+   lives here so the bird animates the same wherever it appears.
+   ------------------------------------------------------------------------- */
+.wing-left,
+.wing-right {
+  transform-box: fill-box;
+  transform-origin: 50% 40%;
+}
+
+.wing-left { animation: wing-flap-left 2.4s ease-in-out infinite; }
+.wing-right { animation: wing-flap-right 2.4s ease-in-out infinite; }
+
+@keyframes wing-flap-left {
+  0%, 100% { transform: rotate(0deg); }
+  50%      { transform: rotate(-5deg); }
+}
+
+@keyframes wing-flap-right {
+  0%, 100% { transform: rotate(0deg); }
+  50%      { transform: rotate(5deg); }
+}
+
+/* --- Scroll reveal (RevealOnScrollDirective) ----------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px) scale(0.98);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* --- Header -------------------------------------------------------------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.25rem 1.5rem 0;
+  pointer-events: none;
+}
+
+.site-header .flex-headers {
+  pointer-events: auto;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0.6rem 0.75rem 0.6rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02), 0 12px 32px rgba(120, 70, 30, 0.05);
+  transition: max-width 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.35s ease,
+    box-shadow 0.35s ease, background-color 0.35s ease;
+}
+
+.site-header.is-scrolled .flex-headers {
+  max-width: 780px;
+  padding: 0.45rem 0.6rem 0.45rem 1.25rem;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 16px 40px rgba(120, 70, 30, 0.08);
+}
+
+.site-header.is-scrolled .logo-image {
+  width: 40px;
+}
+
+.flex-headers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 1.125rem;
+  letter-spacing: -0.02em;
+  color: var(--color-primary);
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-image {
+  width: 48px;
+  height: auto;
+  display: inline-block;
+  transition: width 0.3s ease;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.main-nav a:not(.btn-primary) {
+  position: relative;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.main-nav a:not(.btn-primary)::after {
+  content: '';
+  position: absolute;
+  left: 0.9rem;
+  right: 0.9rem;
+  bottom: 0.32rem;
+  height: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background-color: var(--color-accent);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.main-nav a:hover {
+  color: var(--color-primary);
+  background-color: var(--color-sand);
+  opacity: 1;
+}
+
+.main-nav a:hover:not(.btn-primary)::after,
+.main-nav a.is-active:not(.btn-primary)::after {
+  transform: scaleX(1);
+}
+
+.main-nav a.is-active {
+  color: var(--color-primary);
+}
+
+/* Inside the pill bar the CTA echoes its shape and sits a size down,
+   so it reads as part of the bar instead of a block dropped into it. */
+.main-nav a.btn-primary {
+  margin-left: 0.6rem;
+  padding: 0.42rem 1.05rem;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  transition: background-color 0.2s, transform 0.15s ease-out, padding 0.35s ease;
+}
+
+.site-header.is-scrolled .main-nav a.btn-primary {
+  padding: 0.36rem 0.95rem;
+}
+
+/* --- Mobile nav ---------------------------------------------------------- */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background: transparent;
+  border-radius: var(--radius-sm);
+}
+
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--color-primary);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.nav-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.is-open span:nth-child(2) { opacity: 0; }
+.nav-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0 1.5rem;
+  max-width: 920px;
+  margin: 0 auto;
+  pointer-events: auto;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.25s ease, padding 0.3s ease;
+}
+
+.mobile-nav a {
+  padding: 0.85rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mobile-nav a.btn-primary {
+  color: #fff;
+  text-align: center;
+  border-bottom: none;
+  border-radius: 999px;
+  margin-top: 0.75rem;
+}
+
+.mobile-nav.is-open {
+  opacity: 1;
+  max-height: 320px;
+  padding: 1rem 1.5rem 1.5rem;
+  margin-top: 0.75rem;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 12px 32px rgba(120, 70, 30, 0.08);
+}
+
+/* --- Buttons ------------------------------------------------------------- */
+.btn-primary {
+  background-color: var(--color-accent);
+  color: #fff !important;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  display: inline-block;
+  transition: background-color 0.2s, transform 0.15s ease-out;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-dark);
+  opacity: 1;
+  transform: translateY(-1px) scale(1.02);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-md);
+  box-shadow: inset 0 0 0 1px var(--color-border);
+  font-weight: 500;
+  display: inline-block;
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.15s ease-out;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-sand);
+  box-shadow: inset 0 0 0 1px #d0d0d0;
+  opacity: 1;
+  transform: translateY(-1px) scale(1.02);
+}
+
+.btn-large {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* --- Ripple (RippleDirective) -------------------------------------------- */
+.ripple-host {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  transform: scale(0);
+  animation: ripple-expand 0.6s ease-out;
+  pointer-events: none;
+}
+
+.btn-secondary .ripple-effect {
+  background: rgba(178, 90, 56, 0.18);
+}
+
+@keyframes ripple-expand {
+  to {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* --- Footer -------------------------------------------------------------- */
+.site-footer {
+  position: relative;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-lighter);
+  font-size: 0.875rem;
+  background-color: var(--color-sand);
+  overflow: hidden;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 2.5rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3rem;
+}
+
+.footer-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-logo {
+  width: 34px;
+  height: auto;
+}
+
+.footer-wordmark {
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+  color: var(--color-primary);
+}
+
+.footer-tagline {
+  margin-top: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.footer-nav,
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-nav-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+  margin-bottom: 0.35rem;
+}
+
+.footer-nav a,
+.footer-contact a {
+  color: var(--color-text-muted);
+  width: fit-content;
+}
+
+.footer-nav a:hover,
+.footer-contact a:hover {
+  color: var(--color-accent);
+  opacity: 1;
+}
+
+.footer-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-social svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.footer-contact p {
+  color: var(--color-text-lighter);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-lighter);
+}
+
+@media (max-width: 768px) {
+  .main-nav { display: none; }
+  .nav-toggle { display: flex; }
+  .mobile-nav { display: flex; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; gap: 0.35rem; }
+}
+
+/* 2rem of gutter each side eats too much of a phone screen */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  section {
+    padding: var(--spacing-lg) 0;
+  }
+}

@@ -62,10 +62,10 @@
   position: absolute;
   left: 50%;
   top: 52%;
-  width: 118px;
+  width: 150px;
   height: auto;
   transform: translate(-50%, -50%);
-  filter: drop-shadow(0 3px 6px rgba(44, 26, 10, 0.15));
+  filter: drop-shadow(0 3px 6px rgba(31, 19, 10, 0.15));
   animation: cot-float 4.5s ease-in-out infinite;
 }
 
@@ -230,15 +230,19 @@
   font-size: 0.95rem;
   font-weight: 500;
   color: #fff;
-  background: var(--color-primary);
-  border: 1px solid var(--color-primary);
+  background: var(--color-accent);
+  border: 1px solid var(--color-accent);
   border-radius: var(--radius-md);
   padding: 0.8rem 1.5rem;
-  transition: opacity 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease-out,
+    opacity 0.2s ease;
 }
 
-.cot-btn:hover {
-  opacity: 0.85;
+/* Same hover language as .btn-primary elsewhere on the site */
+.cot-btn:hover:not(:disabled) {
+  background: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  transform: translateY(-1px);
 }
 
 .cot-btn:disabled {
@@ -256,4 +260,26 @@
 
 .cot-done {
   padding-bottom: 2.5rem;
+}
+
+@media (max-width: 480px) {
+  .cot-form {
+    padding: 1.5rem 1.25rem 1.75rem;
+  }
+
+  /* Longhand so .cot-done keeps its own padding-bottom */
+  .cot-intro,
+  .cot-done {
+    padding-top: 1.75rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .cot-scene {
+    height: 120px;
+  }
+
+  .cot-condor {
+    width: 120px;
+  }
 }

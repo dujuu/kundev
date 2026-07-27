@@ -1,0 +1,7 @@
+# Referencias de diseño descargadas (material de trabajo, no fuente)
+stitch_*/
+stitch_*.zip
+
+# Archivos locales de Claude Code
+.claude/settings.local.json
+.claude/*.tmp.*

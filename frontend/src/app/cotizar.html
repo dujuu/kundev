@@ -14,25 +14,31 @@
       <span class="star s3"></span>
       <span class="star s4"></span>
       <span class="star s5"></span>
-      <svg class="cot-condor" viewBox="-70 -20 200 80" aria-hidden="true">
-        <path d="M28,16 C18,12 -2,6 -42,0 C-54,-2 -60,3 -50,7 C-30,11 -6,15 10,18" fill="#2C1A0A" />
-        <path
-          d="M-50,7 L-46,16 M-40,2 L-36,13 M-28,1 L-25,12 M-15,3 L-13,14"
-          stroke="#3D2412"
-          stroke-width="1.5"
-          fill="none"
-        />
-        <path d="M32,16 C44,10 68,0 106,-9 C118,-12 124,-6 114,-2 C94,4 68,10 48,16" fill="#2C1A0A" />
-        <path
-          d="M114,-2 L108,8 M102,-5 L98,6 M88,-7 L86,5 M74,-7 L73,6 M60,-4 L60,9"
-          stroke="#3D2412"
-          stroke-width="1.5"
-          fill="none"
-        />
-        <ellipse cx="20" cy="17" rx="15" ry="7" fill="#2C1A0A" />
-        <ellipse cx="35" cy="13" rx="6" ry="4.5" fill="#2C1A0A" />
-        <path d="M18,13 a5,3 0 0,1 8,0" fill="none" stroke="#8B6040" stroke-width="2" opacity=".5" />
-        <path d="M14,23 L11,38 L18,36 L20,25Z" fill="#2C1A0A" />
+      <svg class="cot-condor" viewBox="0 0 300 110" aria-hidden="true">
+        <!-- left wing: broad covert + tapering fan of primaries -->
+        <g class="wing wing-left">
+          <path d="M143,42 C118,30 96,24 80,23 C75,31 82,38 78,46 C85,54 94,49 101,53 C119,55 133,52 143,52 Z" fill="#1F130A"/>
+          <path d="M92,27 C60,19 30,15 18,14 C34,22 60,28 90,34 Z" fill="#1F130A"/>
+          <path d="M90,33 C62,27 34,26 24,27 C40,33 64,38 88,42 Z" fill="#1F130A"/>
+          <path d="M88,39 C64,37 44,39 36,41 C50,45 68,47 86,48 Z" fill="#1F130A"/>
+        </g>
+        <!-- right wing: mirrored -->
+        <g class="wing wing-right">
+          <path d="M157,42 C182,30 204,24 220,23 C225,31 218,38 222,46 C215,54 206,49 199,53 C181,55 167,52 157,52 Z" fill="#1F130A"/>
+          <path d="M208,27 C240,19 270,15 282,14 C266,22 240,28 210,34 Z" fill="#1F130A"/>
+          <path d="M210,33 C238,27 266,26 276,27 C260,33 236,38 212,42 Z" fill="#1F130A"/>
+          <path d="M212,39 C236,37 256,39 264,41 C250,45 232,47 214,48 Z" fill="#1F130A"/>
+        </g>
+        <!-- short tail -->
+        <path d="M146,60 L140,78 L150,64 Z" fill="#1F130A"/>
+        <path d="M154,60 L160,78 L150,64 Z" fill="#1F130A"/>
+        <!-- body -->
+        <path d="M150,28 C158,33 161,46 158,60 C156,73 144,73 142,60 C139,46 142,33 150,28 Z" fill="#1F130A"/>
+        <!-- white neck ruff, the condor's signature collar -->
+        <path d="M139,29 C139,36 161,36 161,29 C163,38 158,44 150,44 C142,44 137,38 139,29 Z" fill="#F2E7D6"/>
+        <!-- bald head -->
+        <path d="M143,21 C143,14 157,14 157,21 C157,26 152,29 150,29 C148,29 143,26 143,21 Z" fill="#B25A38"/>
+        <path d="M148,27 L150,32 L152,27 Z" fill="#1F130A"/>
       </svg>
     </div>
 

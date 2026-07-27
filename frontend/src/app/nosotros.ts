@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, HostListener, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { RevealOnScrollDirective } from './reveal-on-scroll.directive';
 import { TeamMemberCard } from './team-member-card';
@@ -13,6 +13,12 @@ import type { TeamMember } from './team-member.model';
 export class Nosotros {
   currentYear = new Date().getFullYear();
   menuOpen = signal(false);
+  scrolled = signal(false);
+
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+    this.scrolled.set(window.scrollY > 24);
+  }
 
   toggleMenu(): void {
     this.menuOpen.update((open) => !open);
