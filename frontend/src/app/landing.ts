@@ -53,7 +53,7 @@ export class Landing {
   }
 
   heroCopy: HeroCopy = {
-      title: 'Soluciones digitales de alto nivel',
+      title: 'Software a medida para pymes y empresas',
       subtitle: 'Ayudamos a pymes, comercios locales e instituciones a modernizar sus procesos mediante sitios web profesionales, sistemas de gestión y aplicaciones conectadas al ecosistema digital actual.',
       primaryCta: 'Comenzar un proyecto'
   };
