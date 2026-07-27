@@ -7,7 +7,6 @@
     <nav class="main-nav">
       <a href="#soluciones">Soluciones</a>
       <a href="#vision">Visión</a>
-      <a routerLink="/nosotros">Nosotros</a>
       <a href="#contacto" class="btn-primary" appRipple>Iniciar proyecto</a>
     </nav>
 
@@ -27,7 +26,6 @@
   <nav id="mobile-menu" class="mobile-nav" [class.is-open]="menuOpen()">
     <a href="#soluciones" (click)="closeMenu()">Soluciones</a>
     <a href="#vision" (click)="closeMenu()">Visión</a>
-    <a routerLink="/nosotros" (click)="closeMenu()">Nosotros</a>
     <a href="#contacto" class="btn-primary" (click)="closeMenu()" appRipple>Iniciar proyecto</a>
   </nav>
 </header>
@@ -450,7 +448,6 @@
       <a href="#soluciones">Soluciones</a>
       <a href="#contacto">Cómo trabajamos</a>
       <a href="#vision">Visión</a>
-      <a routerLink="/nosotros">Nosotros</a>
       <a routerLink="/cotizar">Cotización</a>
     </nav>
 
