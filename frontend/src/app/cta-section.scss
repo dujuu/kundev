@@ -1,4 +1,9 @@
-/* "Horizonte": desert dusk close, the page's darkest and loudest moment */
+/* "Horizonte": desert dusk close, the page's darkest and loudest moment.
+   Perf note: --scroll-progress is written on every scroll frame, so anything
+   that reads it must stay on cheap, compositor-only properties (transform,
+   opacity, color/color-mix). filter, box-shadow and text-shadow are paint-
+   heavy — mobile GPUs choke on them when recomputed every tick — so those
+   are kept fixed and decorative instead of scroll-coupled. */
 .cta-section {
   /* Overwritten inline by appScrollProgress; this is the pre-hydration default. */
   --scroll-progress: 0.34;
@@ -37,7 +42,8 @@
   pointer-events: none;
 }
 
-/* Warm light spilling out from the sun — the scene's actual light source */
+/* Warm light spilling out from the sun — the scene's actual light source.
+   Only opacity and transform (scale/translate) change per scroll tick. */
 .cta-glow {
   position: absolute;
   left: 50%;
@@ -53,15 +59,19 @@
     transparent 76%
   );
   opacity: calc(0.22 + var(--sun-light) * 0.78);
+  will-change: transform;
   animation: cta-glow-pulse 8s ease-in-out infinite;
 }
 
+/* Scale-based breathing, not filter — cheap enough to run continuously */
 @keyframes cta-glow-pulse {
-  0%, 100% { filter: brightness(1)    saturate(1);    }
-  50%      { filter: brightness(1.16) saturate(1.08); }
+  0%, 100% { transform: translateX(-50%) translateY(calc(var(--sun-set) * 0.35)) scale(1); }
+  50%      { transform: translateX(-50%) translateY(calc(var(--sun-set) * 0.35)) scale(1.05); }
 }
 
-/* The northern sun — its height is driven entirely by scroll position */
+/* The northern sun — its height is driven entirely by scroll position.
+   The halo is a fixed box-shadow (set once, never recalculated on scroll);
+   only its own transform moves. */
 .cta-sun {
   position: absolute;
   left: 50%;
@@ -71,12 +81,13 @@
   border-radius: 50%;
   background: radial-gradient(circle at 50% 42%, #FBD9AE 0%, #E9A468 42%, #C9743F 72%, #A85434 100%);
   box-shadow:
-    0 0 calc(60px + var(--sun-light) * 90px) rgba(240, 168, 110, calc(0.25 + var(--sun-light) * 0.45)),
-    0 0 calc(140px + var(--sun-light) * 160px) rgba(210, 118, 70, calc(0.15 + var(--sun-light) * 0.35));
+    0 0 100px rgba(240, 168, 110, 0.42),
+    0 0 220px rgba(210, 118, 70, 0.24);
   transform: translate(-50%, var(--sun-set));
+  will-change: transform;
 }
 
-/* Cools toward a deep ember as it drops */
+/* Cools toward a deep ember as it drops — solid opacity fade, no blur */
 .cta-sun::after {
   content: '';
   position: absolute;
@@ -98,28 +109,27 @@
   fill: currentColor;
 }
 
-/* Each ridge is lit by the sun and falls dark as it sets — nearer ridges lose it first */
+/* Each ridge is lit by the sun and falls dark as it sets — nearer ridges lose
+   it first. A solid color-mix recolor reads the same as the old brightness
+   filter but is a plain fill repaint instead of a filtered one. */
 .cta-dune-far {
   --dune-shift: calc(var(--scroll-progress) * -26px);
-  color: #253F5A;
+  color: color-mix(in srgb, #2C4A66 calc(20% + var(--sun-light) * 80%), #0D1826);
   height: 42%;
-  filter: brightness(calc(0.42 + var(--sun-light) * 0.85)) saturate(calc(0.8 + var(--sun-light) * 0.9));
   animation: cta-drift-a 34s ease-in-out infinite alternate;
 }
 
 .cta-dune-mid {
   --dune-shift: calc(var(--scroll-progress) * -14px);
-  color: #16293C;
+  color: color-mix(in srgb, #24405A calc(20% + var(--sun-light) * 80%), #070F1A);
   height: 34%;
-  filter: brightness(calc(0.45 + var(--sun-light) * 0.7));
   animation: cta-drift-b 26s ease-in-out infinite alternate;
 }
 
 .cta-dune-near {
   --dune-shift: calc(var(--scroll-progress) * 16px);
-  color: #0A1420;
+  color: color-mix(in srgb, #16283A calc(20% + var(--sun-light) * 80%), #040A12);
   height: 24%;
-  filter: brightness(calc(0.5 + var(--sun-light) * 0.55));
   animation: cta-drift-a 19s ease-in-out infinite alternate;
 }
 
@@ -140,6 +150,9 @@
   z-index: 1;
 }
 
+/* Text glow is a fixed value — only the color-mix (a plain solid repaint)
+   tracks the sun. A blurred shadow recomputed every scroll tick was the
+   single biggest cost here. */
 .cta-kicker {
   display: inline-block;
   font-size: 0.8125rem;
@@ -147,8 +160,7 @@
   text-transform: uppercase;
   letter-spacing: 0.18em;
   color: #E5A173;
-  text-shadow: 0 0 calc(10px + var(--sun-light) * 26px)
-    rgba(240, 168, 110, calc(0.2 + var(--sun-light) * 0.6));
+  text-shadow: 0 0 22px rgba(240, 168, 110, 0.45);
   margin-bottom: 1.5rem;
   opacity: 0;
   transform: translateY(12px);
@@ -165,8 +177,7 @@
   margin-bottom: 1.5rem;
   /* Catches the sun: warm and bright while it's up, ashen once it's gone */
   color: color-mix(in srgb, #fff calc(58% + var(--sun-light) * 42%), #7E8A99);
-  text-shadow: 0 0 calc(18px + var(--sun-light) * 42px)
-    rgba(240, 168, 110, calc(0.06 + var(--sun-light) * 0.4));
+  text-shadow: 0 0 34px rgba(240, 168, 110, 0.22);
 }
 
 .cta-word {
@@ -183,8 +194,7 @@
 
 .cta-title .cta-word:last-child {
   color: color-mix(in srgb, #F5B584 calc(40% + var(--sun-light) * 60%), #8A6A55);
-  text-shadow: 0 0 calc(20px + var(--sun-light) * 52px)
-    rgba(240, 168, 110, calc(0.15 + var(--sun-light) * 0.65));
+  text-shadow: 0 0 40px rgba(240, 168, 110, 0.4);
 }
 
 .cta-lead {
@@ -214,6 +224,9 @@
     background-color 0.25s ease;
 }
 
+/* Fixed pulse, decoupled from --sun-light: the button is small enough that an
+   always-on box-shadow animation is affordable on its own, but it must not
+   also be recomputed on every scroll frame on top of that. */
 .cta-stage.is-visible .cta-button {
   opacity: 1;
   transform: translateY(0);
@@ -257,13 +270,8 @@
 }
 
 @keyframes cta-button-glow {
-  0%, 100% {
-    box-shadow: 0 12px 30px -10px rgba(178, 90, 56, calc(0.35 + var(--sun-light) * 0.4));
-  }
-  50% {
-    box-shadow: 0 14px calc(38px + var(--sun-light) * 20px) -8px
-      rgba(233, 164, 104, calc(0.45 + var(--sun-light) * 0.45));
-  }
+  0%, 100% { box-shadow: 0 12px 30px -10px rgba(178, 90, 56, 0.55); }
+  50%      { box-shadow: 0 14px 44px -8px rgba(233, 164, 104, 0.72); }
 }
 
 .cta-coords {
@@ -290,8 +298,17 @@
   }
 }
 
-@media (max-width: 768px) {
+/* Phones and touch devices: the sunrise itself (transform/opacity/color,
+   already cheap) stays. What goes is the extra always-on decoration that
+   costs battery for little payoff on a small screen. */
+@media (max-width: 768px), (pointer: coarse) {
   .cta-section { padding: 6rem 0 5rem; }
   .cta-sun { width: 150px; height: 150px; bottom: 20%; }
   .cta-coords { font-size: 0.625rem; margin-top: 2.5rem; }
+
+  .cta-glow,
+  .cta-button::after,
+  .cta-stage.is-visible .cta-button {
+    animation: none;
+  }
 }
